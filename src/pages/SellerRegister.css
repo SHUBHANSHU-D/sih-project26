@@ -1,0 +1,88 @@
+.seller-register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f6f5;
+  padding: 30px;
+}
+
+.seller-register-box {
+  width: 100%;
+  max-width: 650px;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.seller-register-box h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color:black
+}
+
+.progress {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #575757;
+}
+
+.active-step {
+  color: #168a2e;
+  font-weight: bold;
+}
+
+.form-section h2 {
+  margin-bottom: 25px;
+  color:black;
+  text-decoration: underline ;
+}
+
+.form-section label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color:#575656
+}
+
+.form-section input,
+.form-section textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #868585;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.form-section textarea {
+  resize: vertical;
+}
+
+.form-section button {
+  margin-top: 25px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  background: #168a2e;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.form-section button:hover {
+  background: #116b23;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+
+

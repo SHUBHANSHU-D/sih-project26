@@ -1,0 +1,204 @@
+/* Main Page */
+.supply-register-container {
+  min-height: 100vh;
+  background: #f7f5ec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+
+/* Registration Box */
+.supply-register-box {
+  width: 100%;
+  max-width: 700px;
+  background: #ffffff;
+  padding: 35px 45px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.supply-register-box h1 {
+  text-align: center;
+  color: #2e7d32;
+  margin: 0 0 8px;
+  font-size: 30px;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 30px;
+  font-size: 15px;
+}
+
+/* Progress Steps */
+.progress {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.progress div {
+  flex: 1;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.progress .active-step {
+  color: #2e7d32;
+  font-weight: 700;
+}
+
+/* Section */
+.form-section h2 {
+  color: #2e7d32;
+  font-size: 21px;
+  margin-bottom: 22px;
+}
+
+/* Labels */
+.form-section label {
+  display: block;
+  margin-bottom: 7px;
+  margin-top: 17px;
+  color: #263238;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Inputs */
+.form-section input,
+.form-section select,
+.form-section textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 13px;
+  border: 1px solid #cfd8d0;
+  border-radius: 7px;
+  background: #fff;
+  color: #263238;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-section input:focus,
+.form-section select:focus,
+.form-section textarea:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.12);
+}
+
+.form-section textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* File Inputs */
+.form-section input[type="file"] {
+  padding: 10px;
+  background: #fafafa;
+  cursor: pointer;
+}
+
+/* Buttons */
+.form-section button {
+  margin-top: 25px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 7px;
+  background: #2e7d32;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.form-section button:hover {
+  background: #256b29;
+}
+
+.form-section button:active {
+  transform: scale(0.98);
+}
+
+/* Previous / Next Buttons */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.button-row button {
+  flex: 1;
+}
+
+/* Previous Button */
+.button-row button:first-child {
+  background: #e9a23b;
+}
+
+.button-row button:first-child:hover {
+  background: #d8902c;
+}
+
+/* Login Link */
+.login-link {
+  text-align: center;
+  margin-top: 25px;
+  color: #666;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .supply-register-container {
+    padding: 20px 12px;
+    align-items: flex-start;
+  }
+
+  .supply-register-box {
+    padding: 25px 20px;
+  }
+
+  .supply-register-box h1 {
+    font-size: 24px;
+  }
+
+  .progress {
+    gap: 5px;
+  }
+
+  .progress div {
+    font-size: 12px;
+  }
+
+  .button-row {
+    flex-direction: column;
+  }
+
+  .button-row button {
+    width: 100%;
+  }
+}

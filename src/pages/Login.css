@@ -1,77 +1,284 @@
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
 .login-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f4f7f5;
+  background: #f7f5ec;
+  padding: 30px;
+  box-sizing: border-box;
 }
+
+
+/* =========================
+   LOGIN CARD
+   ========================= */
 
 .login-card {
-  width: 400px;
+  width: 420px;
+  max-width: 100%;
   padding: 40px;
-  background: white;
-  border-radius: 12px;
+  background: #ffffff;
+  border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.login-card h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: black;
+
+/* =========================
+   BRAND
+   ========================= */
+
+.login-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
 }
+
+.login-brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.login-brand h1 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.login-brand p {
+  margin: 3px 0 0;
+  color: #78909c;
+  font-size: 12px;
+}
+
+
+/* =========================
+   LOGIN HEADING
+   ========================= */
+
+.login-heading {
+  margin-bottom: 25px;
+}
+
+.login-heading p {
+  margin: 0 0 6px;
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.login-heading h2 {
+  margin: 0;
+  color: #263238;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-heading span {
+  display: block;
+  margin-top: 7px;
+  color: #78909c;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
 
 .form-group {
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: 18px;
 }
 
 .form-group label {
   display: block;
+  width: 100%;
   margin-bottom: 7px;
+  color: #534c4c;
+  font-size: 14px;
   font-weight: 600;
-  color: rgb(83, 76, 76);
 }
 
 .form-group input,
 .form-group select {
+  display: block;
   width: 100%;
   padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #263238;
+  font-size: 15px;
   box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-.login-button {
-  width: 100%;
-  padding: 12px;
+
+/* =========================
+   INPUT FOCUS
+   ========================= */
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.12);
+}
+
+
+/* =========================
+   PLACEHOLDER
+   ========================= */
+
+.form-group input::placeholder {
+  color: #999999;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+   ========================= */
+
+.forgot-password {
+  text-align: right;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+.forgot-password button {
   border: none;
-  border-radius: 6px;
-  background: #2e7d32;
-  color: white;
-  font-size: 16px;
+  background: transparent;
+  color: #2e7d32;
+  font-size: 13px;
   cursor: pointer;
+  padding: 0;
+}
+
+.forgot-password button:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   LOGIN BUTTON
+   ========================= */
+
+.login-button {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 7px;
+  background: #2e7d32;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease,
+              transform 0.1s ease;
 }
 
 .login-button:hover {
   background: #256628;
 }
 
-.forgot-password {
-  text-align: right;
-  margin-top: 15px;
+.login-button:active {
+  transform: scale(0.98);
 }
 
-.forgot-password button {
-  border: none;
-  background: none;
-  color: #2e7d32;
-  cursor: pointer;
+
+/* =========================
+   REGISTER SECTION
+   ========================= */
+
+.login-register {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #eeeeee;
 }
 
 .log_para {
-  color: rgb(42, 41, 41);
+  margin: 8px 0;
+  color: #2a2929;
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.5;
 }
 
+
+/* =========================
+   REGISTER LINKS
+   ========================= */
+
 .r2b {
-  color: purple;
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.r2b:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 500px) {
+
+  .login-page {
+    padding: 15px;
+  }
+
+  .login-card {
+    width: 100%;
+    padding: 30px 25px;
+  }
+
+  .login-brand h1 {
+    font-size: 26px;
+  }
+
+  .login-brand p {
+    font-size: 11px;
+  }
+
+  .login-heading h2 {
+    font-size: 22px;
+  }
+
+  .login-heading span {
+    font-size: 13px;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 14px;
+  }
+
+  .login-button {
+    font-size: 15px;
+  }
 }

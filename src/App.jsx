@@ -17,6 +17,14 @@ import Categories from "./pages/Categories";
 import AIInsights from "./pages/AIInsights";
 import Alerts from "./pages/Alerts";
 import Profile from "./pages/Profile";
+import SupplyPartnerDashboard from "./pages/SupplyPartnerDashboard";
+import SupplyPartnerInventory from "./pages/SupplyPartnerInventory";
+import SupplyPartnerOrders from "./pages/SupplyPartnerOrders";
+import SupplyPartnerShipments from "./pages/SupplyPartnerShipments";
+import SupplyPartnerProfile from "./pages/SupplyPartnerProfile";
+import LogisticsDashboard from "./pages/LogisticsDashboard";
+import LogisticsDeliveries from "./pages/LogisticsDeliveries";
+import RoleRoute from "./components/RoleRoute";
 
 function App() {
   return (
@@ -46,7 +54,11 @@ function App() {
 
             <Route
               path="/buyer-dashboard"
-              element={<BuyerDashboard />}
+              element={
+                <RoleRoute allowedRole="buyer">
+                  <BuyerDashboard />
+                </RoleRoute>
+              }
             />
 
             <Route
@@ -99,6 +111,48 @@ function App() {
             element={<Profile />} 
             />
 
+            <Route
+              path="/supply-partner-dashboard"
+              element={
+                <RoleRoute allowedRole="supply-partner">
+                  <SupplyPartnerDashboard />
+                </RoleRoute>
+              }
+            />
+
+            <Route
+              path="/supply-partner-inventory"
+              element={<SupplyPartnerInventory />}
+            />
+
+            <Route
+              path="/supply-partner-orders"
+              element={<SupplyPartnerOrders />}
+            />
+
+            <Route
+              path="/supply-partner-shipments"
+              element={<SupplyPartnerShipments />}
+            />
+
+            <Route
+              path="/supply-partner-profile"
+              element={<SupplyPartnerProfile />}
+            />
+
+            <Route
+              path="/logistics-dashboard"
+              element={
+                <RoleRoute allowedRole="logistics-partner">
+                  <LogisticsDashboard />
+                </RoleRoute>
+              }
+            />
+
+            <Route
+              path="/logistics-deliveries"
+              element={<LogisticsDeliveries />}
+            />
 
 
 

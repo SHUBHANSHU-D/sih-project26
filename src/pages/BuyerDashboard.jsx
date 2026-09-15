@@ -39,8 +39,8 @@ useEffect(() => {
         <div className="brand">
           <div className="brand-mark">F</div>
           <div>
-            <h2>FarmConnect</h2>
-            <span>Farm to Market</span>
+            <h2>सीधा-SAUDA</h2>
+              <span>किसान से सीधे बाजार तक</span>
           </div>
         </div>
 
@@ -95,10 +95,26 @@ useEffect(() => {
         </nav>
 
         <div className="sidebar-bottom">
+
           <Link to="/profile" className="menu-item">
             <span>○</span>
             Profile
           </Link>
+
+          <Link
+            to="/login"
+            className="menu-item"
+            onClick={() => {
+              localStorage.removeItem("isLoggedIn");
+              localStorage.removeItem("userRole");
+            }}
+          >
+            <span className="material-symbols-outlined">
+              logout
+            </span>
+            Logout
+          </Link>
+
         </div>
 
       </aside>
@@ -111,7 +127,7 @@ useEffect(() => {
         <header className="top-bar">
 
           <div className="mobile-brand">
-            FarmConnect
+            सीधा-SAUDA
           </div>
 
           <div className="top-search">
@@ -449,7 +465,7 @@ useEffect(() => {
                 </p>
               </div>
 
-              <Link to="/ai-prediction">
+              <Link to="/ai-insights">
                 Explore →
               </Link>
 

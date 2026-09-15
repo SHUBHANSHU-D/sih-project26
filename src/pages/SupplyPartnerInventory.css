@@ -1,0 +1,303 @@
+.inventory-page {
+  min-height: 100vh;
+  background: #f7f5ec;
+  color: #263238;
+  padding: 35px 45px;
+}
+
+/* HEADER */
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+.inventory-back {
+  display: inline-block;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.inventory-eyebrow {
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  margin: 0 0 5px;
+}
+
+.inventory-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.inventory-subtitle {
+  color: #78909c;
+  margin: 8px 0 0;
+}
+
+.add-product-button {
+  border: none;
+  background: #2e7d32;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-product-button:hover {
+  background: #256628;
+}
+
+/* CARD */
+
+.inventory-card {
+  background: white;
+  border: 1px solid #e4e2d8;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.inventory-card-header {
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eceae2;
+}
+
+.inventory-card-header p {
+  margin: 0 0 4px;
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.inventory-card-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.inventory-card-header > span {
+  color: #78909c;
+  font-size: 13px;
+}
+
+/* TABLE */
+
+.inventory-table-wrapper {
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.inventory-table th {
+  text-align: left;
+  padding: 13px 18px;
+  background: #faf9f4;
+  color: #78909c;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+}
+
+.inventory-table td {
+  padding: 17px 18px;
+  border-top: 1px solid #eeeeea;
+  font-size: 13px;
+}
+
+.inventory-table tbody tr:hover {
+  background: #fcfcf8;
+}
+
+/* STATUS */
+
+.inventory-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.inventory-status.available {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.inventory-status.low {
+  background: #fff4df;
+  color: #9a6818;
+}
+
+.inventory-status.out {
+  background: #ffebee;
+  color: #c62828;
+}
+
+/* EDIT */
+
+.edit-button {
+  border: 1px solid #d7ded4;
+  background: white;
+  color: #2e7d32;
+  padding: 7px 13px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-button:hover {
+  background: #edf6ec;
+}
+
+/* MODAL */
+
+.inventory-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(38, 50, 56, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.inventory-modal-content {
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 15px;
+  padding: 28px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.modal-header p {
+  margin: 0 0 4px;
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.modal-header h2 {
+  margin: 0;
+}
+
+.close-button {
+  border: none;
+  background: #f1f3ee;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* FORM */
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d9ddd4;
+  border-radius: 8px;
+  padding: 11px 12px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #66bb6a;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* FORM BUTTONS */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.cancel-button,
+.save-button {
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cancel-button {
+  border: 1px solid #d9ddd4;
+  background: white;
+}
+
+.save-button {
+  border: none;
+  background: #2e7d32;
+  color: white;
+}
+
+.save-button:hover {
+  background: #256628;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+  .inventory-page {
+    padding: 25px 18px;
+  }
+
+  .inventory-header {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .add-product-button {
+    width: 100%;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

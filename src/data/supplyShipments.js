@@ -1,0 +1,32 @@
+export const supplyShipments = [
+  {
+    id: "SHP-2001",
+    orderId: "REQ-1003",
+    product: "Wheat",
+    quantity: 200,
+    unit: "kg",
+    buyer: "City Fresh Market",
+    destination: "Indore, Madhya Pradesh",
+    status: "Processing",
+  },
+  {
+    id: "SHP-2002",
+    orderId: "REQ-0998",
+    product: "Fresh Potatoes",
+    quantity: 150,
+    unit: "kg",
+    buyer: "Sharma Retail Store",
+    destination: "Bhopal, Madhya Pradesh",
+    status: "Shipped",
+  },
+  {
+    id: "SHP-2003",
+    orderId: "REQ-0995",
+    product: "Fresh Tomatoes",
+    quantity: 100,
+    unit: "kg",
+    buyer: "Green Basket",
+    destination: "Ujjain, Madhya Pradesh",
+    status: "Out for Delivery",
+  },
+];

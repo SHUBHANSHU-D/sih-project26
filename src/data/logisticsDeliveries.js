@@ -1,0 +1,32 @@
+export const logisticsDeliveries = [
+  {
+    id: "DEL-3001",
+    shipmentId: "SHP-2001",
+    product: "Wheat",
+    quantity: 200,
+    unit: "kg",
+    buyer: "City Fresh Market",
+    destination: "Indore, Madhya Pradesh",
+    status: "Assigned",
+  },
+  {
+    id: "DEL-3002",
+    shipmentId: "SHP-2002",
+    product: "Fresh Potatoes",
+    quantity: 150,
+    unit: "kg",
+    buyer: "Sharma Retail Store",
+    destination: "Bhopal, Madhya Pradesh",
+    status: "Picked Up",
+  },
+  {
+    id: "DEL-3003",
+    shipmentId: "SHP-1995",
+    product: "Fresh Tomatoes",
+    quantity: 100,
+    unit: "kg",
+    buyer: "Green Basket",
+    destination: "Ujjain, Madhya Pradesh",
+    status: "In Transit",
+  },
+];

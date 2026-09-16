@@ -27,10 +27,10 @@ export const aiInsights = [
   },
 
   {
-    id: "buying-recommendation",
-    title: "Buying Recommendation",
+    id: "trace-order",
+    title: "Trace Order",
     description:
-      "Get an AI-assisted recommendation on when to buy.",
+    "Watch the location of your product .",
     type: "recommendation",
     status: "Available",
   },

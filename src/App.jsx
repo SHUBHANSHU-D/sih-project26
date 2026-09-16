@@ -25,6 +25,7 @@ import SupplyPartnerProfile from "./pages/SupplyPartnerProfile";
 import LogisticsDashboard from "./pages/LogisticsDashboard";
 import LogisticsDeliveries from "./pages/LogisticsDeliveries";
 import RoleRoute from "./components/RoleRoute";
+import Payment from "./pages/Payment";
 
 
 function App() {
@@ -153,6 +154,11 @@ function App() {
             <Route
               path="/logistics-deliveries"
               element={<LogisticsDeliveries />}
+            />
+
+            <Route 
+            path="/payment" 
+            element={<Payment />} 
             />
 
 

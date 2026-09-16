@@ -80,6 +80,7 @@
 .cart-item-info h2 {
   margin: 5px 0;
   font-size: 20px;
+  color: black;
 }
 
 .cart-source,
@@ -171,6 +172,7 @@
 .cart-summary h2 {
   margin: 0 0 20px;
   font-size: 20px;
+  color: black;
 }
 
 .summary-row {

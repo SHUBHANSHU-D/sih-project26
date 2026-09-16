@@ -78,6 +78,11 @@ useEffect(() => {
             Cart
           </Link>
 
+          <Link to="/payment" className="menu-item">
+            <span>₹</span>
+            Payment
+          </Link>
+
           <Link to="/delivery" className="menu-item">
             <span>↗</span>
             Delivery

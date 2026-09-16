@@ -82,6 +82,7 @@
 .inventory-card-header h2 {
   margin: 0;
   font-size: 20px;
+  color: black;
 }
 
 .inventory-card-header > span {
@@ -200,16 +201,18 @@
 
 .modal-header h2 {
   margin: 0;
+  color: black
 }
 
 .close-button {
   border: none;
-  background: #f1f3ee;
+  background: #9d9d9d;
   width: 34px;
   height: 34px;
   border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
+  color: black;
 }
 
 /* FORM */
@@ -267,6 +270,7 @@
 .cancel-button {
   border: 1px solid #d9ddd4;
   background: white;
+  color: black;
 }
 
 .save-button {

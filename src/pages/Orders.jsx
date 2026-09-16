@@ -75,7 +75,7 @@ function Orders() {
                   Order ID
                 </span>
 
-                <h2>{order.id}</h2>
+                <h2 style={{color:"black"}}>{order.id}</h2>
               </div>
 
               <div className="order-date">

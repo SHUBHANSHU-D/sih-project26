@@ -11,12 +11,58 @@
   margin-bottom: 30px;
 }
 
+.logistics-deliveries-header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+/* BRAND */
+
+.logistics-deliveries-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 230px;
+}
+
+.logistics-deliveries-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.logistics-deliveries-brand h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #263238;
+}
+
+.logistics-deliveries-brand span {
+  display: block;
+  margin-top: 3px;
+  color: #78909c;
+  font-size: 10px;
+}
+
+/* PAGE TITLE */
+
+.logistics-deliveries-title {
+  flex: 1;
+}
+
 .logistics-deliveries-back {
   display: inline-block;
   color: #2e7d32;
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 18px;
+}
+
+.logistics-deliveries-back:hover {
+  text-decoration: underline;
 }
 
 .logistics-deliveries-eyebrow {
@@ -280,8 +326,27 @@
 /* MOBILE */
 
 @media (max-width: 800px) {
+
   .logistics-deliveries-page {
     padding: 25px 18px;
+  }
+
+  .logistics-deliveries-header-content {
+    display: block;
+  }
+
+  .logistics-deliveries-brand {
+    margin-bottom: 25px;
+    min-width: 0;
+  }
+
+  .logistics-deliveries-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logistics-deliveries-brand h2 {
+    font-size: 17px;
   }
 
   .logistics-delivery-summary {
@@ -296,4 +361,30 @@
   .logistics-delivery-action {
     justify-content: flex-start;
   }
+
+}
+
+@media (max-width: 500px) {
+
+  .logistics-deliveries-brand {
+    gap: 9px;
+  }
+
+  .logistics-deliveries-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logistics-deliveries-header h1 {
+    font-size: 28px;
+  }
+
+  .logistics-deliveries-card-header {
+    padding: 18px;
+  }
+
+  .logistics-delivery-item {
+    padding: 20px 18px;
+  }
+
 }

@@ -1,19 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0");
+
+.insight-icon .material-symbols-outlined {
+  font-size: 25px;
+  color: #2e7d32;
+}
+
 .ai-insights-page {
   min-height: 100vh;
   background: #f7f5ec;
   color: #263238;
   padding: 35px 50px 60px;
+  font-family: Arial, sans-serif;
 }
 
-/* Header */
+
+/* =========================
+   HEADER
+   ========================= */
 
 .ai-insights-header {
   max-width: 1200px;
-  margin: 0 auto 30px;
+  margin: 0 auto 35px;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+
+  gap: 25px;
+}
+
+
+/* HEADER CONTENT */
+
+.ai-header-content {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* =========================
+   BRAND
+   ========================= */
+
+.ai-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+
+/* LOGO */
+
+.ai-brand-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+
+/* BRAND NAME */
+
+.ai-brand h1 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+
+/* TAGLINE */
+
+.ai-brand-tagline {
+  margin: 4px 0 0;
+  color: #78909c;
+  font-size: 13px;
+}
+
+
+/* =========================
+   PAGE TITLE
+   ========================= */
+
+.ai-page-title {
+  max-width: 760px;
 }
 
 .ai-label {
@@ -23,54 +96,95 @@
   letter-spacing: 1.2px;
 }
 
-.ai-insights-header h1 {
+.ai-page-title h2 {
   margin: 7px 0;
   color: #1b5e20;
   font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-.ai-insights-header p {
+.ai-page-title p {
+  max-width: 700px;
   margin: 0;
   color: #607d8b;
   line-height: 1.6;
+  font-size: 15px;
 }
+
+
+/* =========================
+   BACK BUTTON
+   ========================= */
 
 .ai-back-button {
   text-decoration: none;
   color: #2e7d32;
   background: white;
+
   border: 1px solid #d8e2d5;
   padding: 11px 18px;
+
   border-radius: 10px;
+
   font-weight: 600;
   white-space: nowrap;
+
+  transition: 0.2s ease;
 }
 
-/* Intro */
+.ai-back-button:hover {
+  background: #eef6eb;
+  border-color: #b9d1b6;
+}
+
+
+/* =========================
+   INTRODUCTION CARD
+   ========================= */
 
 .ai-intro-card {
   max-width: 1200px;
   margin: 0 auto 30px;
+
   background: #edf7ed;
   border: 1px solid #d3e8d2;
   border-radius: 18px;
+
   padding: 28px;
+
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.ai-intro-icon {
-  width: 65px;
-  height: 65px;
-  min-width: 65px;
+
+/* INTRO LOGO */
+
+.ai-intro-logo {
+  width: 70px;
+  height: 70px;
+
+  min-width: 70px;
+
   border-radius: 18px;
   background: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 32px;
 }
+
+.ai-intro-logo img {
+  width: 60px;
+  height: 60px;
+
+  object-fit: contain;
+  display: block;
+}
+
+
+/* INTRO TEXT */
 
 .ai-intro-card span {
   color: #5d8b60;
@@ -91,17 +205,24 @@
   line-height: 1.5;
 }
 
-/* Section */
+
+/* =========================
+   INSIGHTS SECTION
+   ========================= */
 
 .insights-section {
   max-width: 1200px;
   margin: 0 auto 25px;
 }
 
+
+/* SECTION HEADER */
+
 .insights-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   margin-bottom: 18px;
 }
 
@@ -116,16 +237,27 @@
   color: #78909c;
 }
 
+
+/* COUNT */
+
 .insight-count {
   background: #e8f5e9;
   color: #2e7d32;
+
   padding: 8px 14px;
+
   border-radius: 20px;
+
   font-size: 13px;
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
-/* Grid */
+
+/* =========================
+   INSIGHTS GRID
+   ========================= */
 
 .insights-grid {
   display: grid;
@@ -133,43 +265,79 @@
   gap: 18px;
 }
 
+
+/* =========================
+   INSIGHT CARD
+   ========================= */
+
 .insight-card {
   background: white;
   border: 1px solid #e1e8de;
   border-radius: 17px;
+
   padding: 23px;
+
   display: flex;
   gap: 17px;
+
   min-height: 190px;
+
   box-shadow: 0 5px 18px rgba(38, 50, 56, 0.05);
-  transition: 0.2s ease;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .insight-card:hover {
   transform: translateY(-3px);
+
   box-shadow: 0 9px 23px rgba(38, 50, 56, 0.09);
+
+  border-color: #c9dcc6;
 }
+
+
+/* =========================
+   INSIGHT ICON
+   ========================= */
 
 .insight-icon {
   width: 50px;
   height: 50px;
+
   min-width: 50px;
+
   border-radius: 13px;
+
   background: #f1f7ef;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-size: 25px;
 }
 
+
+/* =========================
+   INSIGHT CONTENT
+   ========================= */
+
 .insight-card-content {
   flex: 1;
+  min-width: 0;
 }
+
+
+/* TITLE ROW */
 
 .insight-title-row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
   gap: 8px;
 }
 
@@ -179,79 +347,135 @@
   font-size: 18px;
 }
 
+
+/* STATUS */
+
 .insight-status {
   color: #2e7d32;
   background: #edf7ed;
+
   padding: 4px 7px;
+
   border-radius: 10px;
+
   font-size: 9px;
   font-weight: 700;
+
   white-space: nowrap;
 }
 
+
+/* DESCRIPTION */
+
 .insight-card p {
   color: #607d8b;
+
   line-height: 1.5;
+
   font-size: 14px;
+
   margin: 12px 0 18px;
 }
+
+
+/* BUTTON */
 
 .insight-button {
   border: none;
   background: transparent;
+
   color: #2e7d32;
+
   padding: 0;
+
   font-size: 13px;
   font-weight: 700;
+
   cursor: pointer;
+
+  transition: 0.2s ease;
 }
 
 .insight-button:hover {
   color: #1b5e20;
+  text-decoration: underline;
 }
 
-/* Future AI */
+
+/* =========================
+   FUTURE AI CARD
+   ========================= */
 
 .ai-future-card {
   max-width: 1200px;
   margin: 0 auto;
+
   background: #fffaf0;
   border: 1px solid #efdfbd;
+
   border-radius: 16px;
+
   padding: 23px 26px;
+
   display: flex;
   align-items: center;
+
   gap: 17px;
 }
 
-.future-icon {
-  width: 45px;
-  height: 45px;
-  min-width: 45px;
-  border-radius: 50%;
+
+/* FUTURE LOGO */
+
+.future-logo {
+  width: 55px;
+  height: 55px;
+
+  min-width: 55px;
+
   background: white;
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
 }
+
+.future-logo img {
+  width: 48px;
+  height: 48px;
+
+  object-fit: contain;
+  display: block;
+}
+
+
+/* FUTURE TEXT */
 
 .ai-future-card h3 {
   margin: 0 0 6px;
+
   color: #263238;
+
   font-size: 17px;
 }
 
 .ai-future-card p {
   margin: 0;
+
   color: #607d8b;
+
   font-size: 14px;
+
   line-height: 1.5;
 }
 
-/* Responsive */
+
+/* =========================
+   TABLET
+   ========================= */
 
 @media (max-width: 950px) {
+
   .ai-insights-page {
     padding: 28px 25px 50px;
   }
@@ -259,24 +483,104 @@
   .insights-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .ai-brand-logo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .ai-brand h1 {
+    font-size: 27px;
+  }
+
+  .ai-page-title h2 {
+    font-size: 31px;
+  }
 }
 
+
+/* =========================
+   MOBILE
+   ========================= */
+
 @media (max-width: 650px) {
+
   .ai-insights-page {
     padding: 25px 18px 45px;
   }
 
+
+  /* HEADER */
+
   .ai-insights-header {
     flex-direction: column;
+    gap: 20px;
   }
 
-  .ai-insights-header h1 {
+  .ai-header-content {
+    width: 100%;
+  }
+
+
+  /* BRAND */
+
+  .ai-brand {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .ai-brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .ai-brand h1 {
+    font-size: 25px;
+  }
+
+  .ai-brand-tagline {
+    font-size: 12px;
+  }
+
+
+  /* PAGE TITLE */
+
+  .ai-page-title h2 {
     font-size: 29px;
   }
 
+  .ai-page-title p {
+    font-size: 14px;
+  }
+
+
+  /* BACK BUTTON */
+
+  .ai-back-button {
+    align-self: flex-start;
+  }
+
+
+  /* INTRO */
+
   .ai-intro-card {
     align-items: flex-start;
+    padding: 22px;
   }
+
+  .ai-intro-logo {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .ai-intro-logo img {
+    width: 52px;
+    height: 52px;
+  }
+
+
+  /* SECTION */
 
   .insights-heading {
     align-items: flex-start;
@@ -284,11 +588,66 @@
     gap: 12px;
   }
 
+
+  /* GRID */
+
   .insights-grid {
     grid-template-columns: 1fr;
   }
 
+
+  /* FUTURE */
+
   .ai-future-card {
     align-items: flex-start;
+    padding: 20px;
+  }
+
+  .future-logo {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .future-logo img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+   ========================= */
+
+@media (max-width: 400px) {
+
+  .ai-insights-page {
+    padding: 20px 14px 40px;
+  }
+
+  .ai-brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .ai-brand h1 {
+    font-size: 23px;
+  }
+
+  .ai-page-title h2 {
+    font-size: 26px;
+  }
+
+  .ai-intro-card {
+    flex-direction: column;
+  }
+
+  .insight-card {
+    padding: 19px;
+  }
+
+  .ai-future-card {
+    flex-direction: column;
   }
 }

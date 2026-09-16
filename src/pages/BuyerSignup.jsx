@@ -21,45 +21,47 @@ function BuyerSignup() {
   }
 
   function handleSubmit(event) {
-  event.preventDefault();
+    event.preventDefault();
 
-  if (formData.password !== formData.repeatPassword) {
-    alert("Passwords do not match");
-    return;
+    if (formData.password !== formData.repeatPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
+    // Save buyer profile information
+    // Password is NOT stored in localStorage.
+    const buyerProfile = {
+      name: formData.name,
+      email: formData.email,
+      mobile: formData.mobile,
+      role: "Buyer",
+      createdAt: new Date().toLocaleDateString("en-IN"),
+    };
+
+    localStorage.setItem(
+      "buyerProfile",
+      JSON.stringify(buyerProfile)
+    );
+
+    alert("Account created successfully!");
   }
-
-  // Save buyer profile information
-  const buyerProfile = {
-    name: formData.name,
-    email: formData.email,
-    mobile: formData.mobile,
-    role: "Buyer",
-    createdAt: new Date().toLocaleDateString("en-IN"),
-  };
-
-  localStorage.setItem(
-    "buyerProfile",
-    JSON.stringify(buyerProfile)
-  );
-
-  alert("Account created successfully!");
-}
 
   return (
     <div className="buyer-signup-container">
       <div className="buyer-signup-box">
 
         <h1>Buyer Sign Up</h1>
-        <br></br>
 
         <p className="signup-subtitle">
-          Create your account to start buying directly from sellers.
+          Create your account to start buying directly from
+          farmers and verified supply partners.
         </p>
 
         <form onSubmit={handleSubmit}>
 
-          <label>Full Name</label>
+          <label htmlFor="name">Full Name</label>
           <input
+            id="name"
             type="text"
             name="name"
             value={formData.name}
@@ -68,8 +70,9 @@ function BuyerSignup() {
             required
           />
 
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             value={formData.email}
@@ -78,8 +81,9 @@ function BuyerSignup() {
             required
           />
 
-          <label>Mobile Number</label>
+          <label htmlFor="mobile">Mobile Number</label>
           <input
+            id="mobile"
             type="tel"
             name="mobile"
             value={formData.mobile}
@@ -88,8 +92,9 @@ function BuyerSignup() {
             required
           />
 
-          <label>Password</label>
+          <label htmlFor="password">Password</label>
           <input
+            id="password"
             type="password"
             name="password"
             value={formData.password}
@@ -98,8 +103,11 @@ function BuyerSignup() {
             required
           />
 
-          <label>Repeat Password</label>
+          <label htmlFor="repeatPassword">
+            Repeat Password
+          </label>
           <input
+            id="repeatPassword"
             type="password"
             name="repeatPassword"
             value={formData.repeatPassword}

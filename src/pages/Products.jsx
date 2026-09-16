@@ -230,12 +230,22 @@ function handleAddToCart(product) {
 
       {/* Header */}
       <header className="products-header">
-        <div>
-          <h1>Farm Products</h1>
-          <p>
-            Fresh agricultural products from farmers and verified
-            supply partners.
-          </p>
+        <div className="products-brand">
+
+          <img
+            src="/logo.jpeg"
+            alt="सीधा-SAUDA Logo"
+            className="products-brand-logo"
+          />
+
+          <div>
+            <h1>Farm Products</h1>
+            <p>
+              Fresh agricultural products from farmers and verified
+              supply partners.
+            </p>
+          </div>
+
         </div>
 
         <div className="header-actions">

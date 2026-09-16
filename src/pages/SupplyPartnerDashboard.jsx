@@ -14,14 +14,14 @@ function SupplyPartnerDashboard() {
 
         <div className="supply-brand">
 
-          <div className="supply-brand-mark">
-            <span className="material-symbols-outlined">
-              agriculture
-            </span>
-          </div>
+          <img
+            src="/logo.jpeg"
+            alt="सीधा-SAUDA Logo"
+            className="supply-brand-logo"
+          />
 
           <div>
-            <h2>FarmConnect</h2>
+            <h2>सीधा-SAUDA</h2>
             <span>Supply Network</span>
           </div>
 
@@ -72,18 +72,6 @@ function SupplyPartnerDashboard() {
             </span>
             Shipments
           </Link>
-
-
-          <Link
-            to="/supply-partner-performance"
-            className="supply-menu-item"
-          >
-            <span className="material-symbols-outlined">
-              analytics
-            </span>
-            Performance
-          </Link>
-
 
           <Link
             to="/ai-insights"
@@ -149,7 +137,15 @@ function SupplyPartnerDashboard() {
         <header className="supply-top-bar">
 
           <div className="supply-mobile-brand">
-            FarmConnect
+
+            <img
+              src="/logo.jpeg"
+              alt="सीधा-SAUDA Logo"
+              className="supply-mobile-logo"
+            />
+
+            <span>सीधा-SAUDA</span>
+
           </div>
 
 
@@ -235,7 +231,7 @@ function SupplyPartnerDashboard() {
             <div>
 
               <p className="supply-eyebrow">
-                SUPPLY PARTNER PORTAL
+                सीधा-SAUDA SUPPLY PARTNER PORTAL
               </p>
 
 
@@ -270,15 +266,27 @@ function SupplyPartnerDashboard() {
             <div className="supply-welcome-illustration">
 
               <div className="supply-farm-circle">
-                🌾
+
+                <span className="material-symbols-outlined">
+                  agriculture
+                </span>
+
               </div>
 
               <span className="supply-leaf supply-leaf-one">
-                🌿
+
+                <span className="material-symbols-outlined">
+                  eco
+                </span>
+
               </span>
 
               <span className="supply-leaf supply-leaf-two">
-                🍃
+
+                <span className="material-symbols-outlined">
+                  spa
+                </span>
+
               </span>
 
             </div>

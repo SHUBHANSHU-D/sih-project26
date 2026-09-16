@@ -18,7 +18,7 @@ function Login() {
     }
 
     // Temporary frontend login.
-    // Real authentication will be handled by the backend later.
+    // Real authentication will be connected to the backend later.
 
     localStorage.setItem("isLoggedIn", "true");
     localStorage.setItem("userRole", role);
@@ -37,37 +37,48 @@ function Login() {
 
       <div className="login-card">
 
-        {/* BRAND */}
+        {/* ================= BRAND ================= */}
+
         <div className="login-brand">
 
-          <div className="login-brand-icon">
-            🌾
-          </div>
+          <img
+            src="/logo.jpeg"
+            alt="सीधा-SAUDA Logo"
+            className="login-logo"
+          />
 
-          <div>
-            <h1>सीधा-SAUDA</h1>
-            <p>किसान से सीधे बाजार तक</p>
-          </div>
+          <h1>सीधा-SAUDA</h1>
+
+          <p>किसान से सीधे बाजार तक</p>
 
         </div>
 
-        {/* HEADING */}
+
+        {/* ================= HEADING ================= */}
+
         <div className="login-heading">
 
-          <p>WELCOME BACK</p>
-
-          <h2>Sign in to your account</h2>
-
-          <span>
-            Access your सीधा-SAUDA dashboard.
+          <span className="welcome-text">
+            WELCOME BACK
           </span>
+
+          <h2>
+            Sign in to your account
+          </h2>
+
+          <p>
+            Access your सीधा-SAUDA dashboard.
+          </p>
 
         </div>
 
-        {/* LOGIN FORM */}
+
+        {/* ================= LOGIN FORM ================= */}
+
         <form onSubmit={handleLogin}>
 
           {/* ROLE */}
+
           <div className="form-group">
 
             <label htmlFor="role">
@@ -98,7 +109,9 @@ function Login() {
 
           </div>
 
+
           {/* EMAIL */}
+
           <div className="form-group">
 
             <label htmlFor="email">
@@ -118,7 +131,9 @@ function Login() {
 
           </div>
 
+
           {/* PASSWORD */}
+
           <div className="form-group">
 
             <label htmlFor="password">
@@ -138,13 +153,17 @@ function Login() {
 
           </div>
 
+
           {/* FORGOT PASSWORD */}
+
           <div className="forgot-password">
 
             <button
               type="button"
               onClick={() =>
-                alert("Password recovery will be connected to the backend later.")
+                alert(
+                  "Password recovery will be connected to the backend later."
+                )
               }
             >
               Forgot Password?
@@ -152,7 +171,9 @@ function Login() {
 
           </div>
 
-          {/* LOGIN BUTTON */}
+
+          {/* SIGN IN */}
+
           <button
             type="submit"
             className="login-button"
@@ -162,25 +183,21 @@ function Login() {
 
         </form>
 
-        {/* REGISTER LINKS */}
+
+        {/* ================= REGISTRATION ================= */}
+
         <div className="login-register">
 
-          <p className="log_para">
+          <p>
             Don't have a buyer account?{" "}
-            <Link
-              to="/buyer-signup"
-              className="r2b"
-            >
+            <Link to="/buyer-signup">
               Register as Buyer
             </Link>
           </p>
 
-          <p className="log_para">
+          <p>
             Are you a supply-chain partner?{" "}
-            <Link
-              to="/supply-partner-register"
-              className="r2b"
-            >
+            <Link to="/supply-partner-register">
               Register as Supply Partner
             </Link>
           </p>

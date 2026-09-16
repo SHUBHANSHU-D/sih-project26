@@ -37,11 +37,18 @@ useEffect(() => {
       <aside className="buyer-sidebar">
 
         <div className="brand">
-          <div className="brand-mark">F</div>
+
+          <img
+            src="/logo.jpeg"
+            alt="सीधा-SAUDA Logo"
+            className="buyer-sidebar-logo"
+          />
+
           <div>
             <h2>सीधा-SAUDA</h2>
-              <span>किसान से सीधे बाजार तक</span>
+            <span>किसान से सीधे बाजार तक</span>
           </div>
+
         </div>
 
         <nav className="sidebar-menu">
@@ -127,7 +134,15 @@ useEffect(() => {
         <header className="top-bar">
 
           <div className="mobile-brand">
-            सीधा-SAUDA
+
+            <img
+              src="/logo.jpeg"
+              alt="सीधा-SAUDA Logo"
+              className="buyer-mobile-logo"
+            />
+
+            <span>सीधा-SAUDA</span>
+
           </div>
 
           <div className="top-search">
@@ -197,14 +212,14 @@ useEffect(() => {
             </div>
 
             <div className="welcome-illustration">
-              <div className="farm-circle">
-                🌾
-              </div>
 
-              <div className="small-leaf leaf-one">🌿</div>
-              <div className="small-leaf leaf-two">🍃</div>
+              <img
+                src="/logo.jpeg"
+                alt="सीधा-SAUDA"
+                className="buyer-hero-logo"
+              />
+
             </div>
-
           </section>
 
           {/* ================= QUICK OVERVIEW ================= */}

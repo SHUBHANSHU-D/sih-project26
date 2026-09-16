@@ -1,19 +1,79 @@
+/* =========================
+   ALERTS PAGE
+   ========================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0");
+
 .alerts-page {
   min-height: 100vh;
   background: #f7f5ec;
   color: #263238;
   padding: 35px 50px 60px;
+  font-family: Arial, sans-serif;
 }
 
-/* Header */
+
+/* =========================
+   HEADER
+   ========================= */
 
 .alerts-header {
   max-width: 1200px;
-  margin: 0 auto 30px;
+  margin: 0 auto 35px;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
+
+  gap: 25px;
+}
+
+.alerts-header-content {
+  flex: 1;
+  min-width: 0;
+}
+
+
+/* =========================
+   BRAND
+   ========================= */
+
+.alerts-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.alerts-brand-logo {
+  width: 62px;
+  height: 62px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.alerts-brand h1 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.alerts-brand-tagline {
+  margin: 4px 0 0;
+  color: #78909c;
+  font-size: 13px;
+}
+
+
+/* =========================
+   PAGE TITLE
+   ========================= */
+
+.alerts-page-title {
+  max-width: 760px;
 }
 
 .alerts-label {
@@ -23,54 +83,97 @@
   letter-spacing: 1.2px;
 }
 
-.alerts-header h1 {
+.alerts-page-title h2 {
   margin: 7px 0;
   color: #1b5e20;
   font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
-.alerts-header p {
+.alerts-page-title p {
+  max-width: 700px;
   margin: 0;
   color: #607d8b;
   line-height: 1.6;
+  font-size: 15px;
 }
+
+
+/* =========================
+   BACK BUTTON
+   ========================= */
 
 .alerts-back-button {
   text-decoration: none;
   color: #2e7d32;
   background: white;
+
   border: 1px solid #d8e2d5;
   padding: 11px 18px;
+
   border-radius: 10px;
+
   font-weight: 600;
   white-space: nowrap;
+
+  transition: 0.2s ease;
 }
 
-/* Summary */
+.alerts-back-button:hover {
+  background: #eef6eb;
+  border-color: #b9d1b6;
+}
+
+
+/* =========================
+   SUMMARY
+   ========================= */
 
 .alerts-summary {
   max-width: 1200px;
   margin: 0 auto 25px;
+
   background: #edf7ed;
   border: 1px solid #d3e8d2;
   border-radius: 18px;
+
   padding: 25px 28px;
+
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
+
+/* SUMMARY ICON */
+
 .alerts-summary-icon {
   width: 58px;
   height: 58px;
   min-width: 58px;
+
   background: white;
   border-radius: 16px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 27px;
 }
+
+.alerts-summary-icon .material-symbols-outlined {
+  color: #2e7d32;
+  font-size: 28px;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 450,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+
+/* SUMMARY TEXT */
 
 .alerts-summary span {
   color: #5d8b60;
@@ -90,26 +193,39 @@
   color: #607d8b;
 }
 
+
+/* MARK ALL */
+
 .mark-all-button {
   margin-left: auto;
+
   border: none;
   background: #2e7d32;
   color: white;
+
   padding: 11px 17px;
+
   border-radius: 9px;
+
   font-weight: 700;
   cursor: pointer;
+
+  transition: 0.2s ease;
 }
 
 .mark-all-button:hover {
   background: #1b5e20;
 }
 
-/* Controls */
+
+/* =========================
+   CONTROLS
+   ========================= */
 
 .alerts-controls {
   max-width: 1200px;
   margin: 0 auto 18px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -128,33 +244,55 @@
 
 .alerts-controls select {
   padding: 10px 14px;
+
   border: 1px solid #d8e2d5;
   border-radius: 9px;
+
   background: white;
   color: #263238;
+
   font-size: 14px;
+  outline: none;
 }
 
-/* Alert list */
+.alerts-controls select:focus {
+  border-color: #66bb6a;
+}
+
+
+/* =========================
+   ALERT LIST
+   ========================= */
 
 .alerts-list {
   max-width: 1200px;
   margin: 0 auto 25px;
+
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
+
+/* ALERT CARD */
+
 .alert-card {
   background: white;
   border: 1px solid #e1e8de;
   border-radius: 15px;
+
   padding: 19px 22px;
+
   display: flex;
   align-items: center;
   gap: 17px;
+
   cursor: pointer;
-  transition: 0.2s ease;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .alert-card:hover {
@@ -170,20 +308,43 @@
   opacity: 0.82;
 }
 
+
+/* =========================
+   ALERT ICON
+   ========================= */
+
 .alert-icon {
   width: 48px;
   height: 48px;
   min-width: 48px;
+
   border-radius: 13px;
   background: #f1f7ef;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 23px;
 }
+
+.alert-icon .material-symbols-outlined {
+  color: #2e7d32;
+  font-size: 24px;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 450,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+
+/* =========================
+   ALERT CONTENT
+   ========================= */
 
 .alert-content {
   flex: 1;
+  min-width: 0;
 }
 
 .alert-title-row {
@@ -202,6 +363,7 @@
   margin: 6px 0;
   color: #607d8b;
   font-size: 14px;
+  line-height: 1.5;
 }
 
 .alert-time {
@@ -209,18 +371,34 @@
   font-size: 12px;
 }
 
+
+/* =========================
+   UNREAD DOT
+   ========================= */
+
 .unread-dot {
   width: 7px;
   height: 7px;
+
   border-radius: 50%;
   background: #2e7d32;
+
+  flex-shrink: 0;
 }
+
+
+/* =========================
+   PRIORITY
+   ========================= */
 
 .priority-badge {
   padding: 6px 10px;
+
   border-radius: 12px;
+
   font-size: 10px;
   font-weight: 700;
+
   text-transform: capitalize;
 }
 
@@ -234,38 +412,71 @@
   color: #b56b00;
 }
 
-/* Empty */
+
+/* =========================
+   EMPTY STATE
+   ========================= */
 
 .no-alerts {
   background: white;
   border: 1px solid #e1e8de;
   border-radius: 16px;
+
   padding: 50px 20px;
+
   text-align: center;
 }
 
-.no-alerts div {
-  font-size: 45px;
+.no-alerts-icon {
+  width: 58px;
+  height: 58px;
+
+  margin: 0 auto;
+
+  border-radius: 50%;
+  background: #f1f7ef;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-alerts-icon .material-symbols-outlined {
+  color: #78909c;
+  font-size: 30px;
+
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
 }
 
 .no-alerts h3 {
   color: #1b5e20;
-  margin: 10px 0 5px;
+  margin: 12px 0 5px;
 }
 
 .no-alerts p {
   color: #78909c;
+  margin: 0;
 }
 
-/* Info */
+
+/* =========================
+   INFO
+   ========================= */
 
 .alerts-info {
   max-width: 1200px;
   margin: 0 auto;
+
   background: #fffaf0;
   border: 1px solid #efdfbd;
   border-radius: 16px;
+
   padding: 22px 25px;
+
   display: flex;
   align-items: center;
   gap: 17px;
@@ -275,12 +486,13 @@
   width: 45px;
   height: 45px;
   min-width: 45px;
+
   border-radius: 50%;
   background: white;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
 }
 
 .alerts-info h3 {
@@ -296,29 +508,108 @@
   line-height: 1.5;
 }
 
-/* Responsive */
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 950px) {
+
+  .alerts-page {
+    padding: 30px 30px 50px;
+  }
+
+  .alerts-brand-logo {
+    width: 58px;
+    height: 58px;
+  }
+
+  .alerts-brand h1 {
+    font-size: 27px;
+  }
+
+  .alerts-page-title h2 {
+    font-size: 31px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
 
 @media (max-width: 700px) {
+
   .alerts-page {
     padding: 25px 18px 45px;
   }
 
+
+  /* HEADER */
+
   .alerts-header {
     flex-direction: column;
+    gap: 20px;
   }
 
-  .alerts-header h1 {
+  .alerts-header-content {
+    width: 100%;
+  }
+
+
+  /* BRAND */
+
+  .alerts-brand {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .alerts-brand-logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .alerts-brand h1 {
+    font-size: 25px;
+  }
+
+  .alerts-brand-tagline {
+    font-size: 12px;
+  }
+
+
+  /* TITLE */
+
+  .alerts-page-title h2 {
     font-size: 29px;
   }
+
+  .alerts-page-title p {
+    font-size: 14px;
+  }
+
+
+  /* BACK */
+
+  .alerts-back-button {
+    align-self: flex-start;
+  }
+
+
+  /* SUMMARY */
 
   .alerts-summary {
     align-items: flex-start;
     flex-wrap: wrap;
+    padding: 22px;
   }
 
   .mark-all-button {
     margin-left: 0;
   }
+
+
+  /* CONTROLS */
 
   .alerts-controls {
     align-items: flex-start;
@@ -326,15 +617,74 @@
     gap: 12px;
   }
 
+  .alerts-controls select {
+    width: 100%;
+  }
+
+
+  /* ALERT */
+
   .alert-card {
     align-items: flex-start;
+    padding: 17px;
   }
 
   .priority-badge {
     display: none;
   }
 
+
+  /* INFO */
+
   .alerts-info {
     align-items: flex-start;
+  }
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+   ========================= */
+
+@media (max-width: 400px) {
+
+  .alerts-page {
+    padding: 20px 14px 40px;
+  }
+
+  .alerts-brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .alerts-brand h1 {
+    font-size: 23px;
+  }
+
+  .alerts-page-title h2 {
+    font-size: 26px;
+  }
+
+  .alerts-summary {
+    padding: 18px;
+  }
+
+  .alert-card {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .alert-icon {
+    width: 43px;
+    height: 43px;
+    min-width: 43px;
+  }
+
+  .alert-title-row h3 {
+    font-size: 15px;
+  }
+
+  .alert-content p {
+    font-size: 13px;
   }
 }

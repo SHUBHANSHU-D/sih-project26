@@ -56,23 +56,48 @@ function LogisticsDeliveries() {
 
       <header className="logistics-deliveries-header">
 
-        <div>
-          <Link
-            to="/logistics-dashboard"
-            className="logistics-deliveries-back"
-          >
-            ← Dashboard
-          </Link>
+        <div className="logistics-deliveries-header-content">
 
-          <p className="logistics-deliveries-eyebrow">
-            LOGISTICS PARTNER
-          </p>
+          {/* BRAND */}
 
-          <h1>Deliveries</h1>
+          <div className="logistics-deliveries-brand">
 
-          <p className="logistics-deliveries-subtitle">
-            Manage assigned shipments and update delivery status.
-          </p>
+            <img
+              src="/logo.jpeg"
+              alt="सीधा-SAUDA Logo"
+              className="logistics-deliveries-logo"
+            />
+
+            <div>
+              <h2>सीधा-SAUDA</h2>
+              <span>Logistics Network</span>
+            </div>
+
+          </div>
+
+          {/* PAGE TITLE */}
+
+          <div className="logistics-deliveries-title">
+
+            <Link
+              to="/logistics-dashboard"
+              className="logistics-deliveries-back"
+            >
+              ← Dashboard
+            </Link>
+
+            <p className="logistics-deliveries-eyebrow">
+              सीधा-SAUDA LOGISTICS
+            </p>
+
+            <h1>Deliveries</h1>
+
+            <p className="logistics-deliveries-subtitle">
+              Manage assigned shipments and update delivery status.
+            </p>
+
+          </div>
+
         </div>
 
       </header>
@@ -250,6 +275,8 @@ function LogisticsDeliveries() {
 
                   </div>
                 )}
+
+                {/* COMPLETED */}
 
                 {delivery.status === "Delivered" && (
                   <div className="logistics-delivery-complete">

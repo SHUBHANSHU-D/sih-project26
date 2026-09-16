@@ -5,6 +5,7 @@
   display: flex;
   background: #f7f5ec;
   color: #263238;
+  font-family: Arial, sans-serif;
 }
 
 .material-symbols-outlined {
@@ -24,7 +25,9 @@
     "opsz" 24;
 }
 
-/* SIDEBAR */
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
 
 .logistics-sidebar {
   width: 245px;
@@ -37,6 +40,8 @@
   box-sizing: border-box;
 }
 
+/* BRAND */
+
 .logistics-brand {
   display: flex;
   align-items: center;
@@ -45,32 +50,32 @@
   margin-bottom: 35px;
 }
 
-.logistics-brand-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 11px;
-  background: #2e7d32;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.logistics-brand-mark .material-symbols-outlined {
-  font-size: 22px;
+.logistics-brand-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
 }
 
 .logistics-brand h2 {
   margin: 0;
-  font-size: 17px;
+  color: #2e7d32;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .logistics-brand span {
+  display: block;
   color: #78909c;
   font-size: 10px;
+  margin-top: 4px;
 }
 
-/* MENU */
+/* =========================================================
+   MENU
+   ========================================================= */
 
 .logistics-menu {
   display: flex;
@@ -88,6 +93,9 @@
   color: #546e7a;
   font-size: 13px;
   font-weight: 600;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .logistics-menu-item:hover,
@@ -107,24 +115,49 @@
   gap: 5px;
 }
 
-/* MAIN */
+/* =========================================================
+   MAIN
+   ========================================================= */
 
 .logistics-main {
   flex: 1;
   min-width: 0;
 }
 
-/* TOP BAR */
+/* =========================================================
+   TOP BAR
+   ========================================================= */
 
 .logistics-top-bar {
-  height: 72px;
-  background: white;
+  min-height: 72px;
+  background: #ffffff;
   border-bottom: 1px solid #e4e2d8;
   display: flex;
   align-items: center;
   padding: 0 32px;
   gap: 25px;
+  box-sizing: border-box;
 }
+
+/* MOBILE BRAND */
+
+.logistics-mobile-brand {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  color: #2e7d32;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.logistics-mobile-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  display: block;
+}
+
+/* SEARCH */
 
 .logistics-search {
   max-width: 420px;
@@ -137,6 +170,7 @@
   align-items: center;
   gap: 9px;
   padding: 0 12px;
+  box-sizing: border-box;
 }
 
 .logistics-search .material-symbols-outlined {
@@ -149,8 +183,15 @@
   outline: none;
   background: transparent;
   width: 100%;
+  color: #263238;
   font-size: 13px;
 }
+
+.logistics-search input::placeholder {
+  color: #90a4ae;
+}
+
+/* TOP ACTIONS */
 
 .logistics-top-actions {
   margin-left: auto;
@@ -159,11 +200,24 @@
   gap: 20px;
 }
 
+/* NOTIFICATION */
+
 .logistics-notification {
   position: relative;
+  width: 40px;
+  height: 40px;
   color: #546e7a;
   text-decoration: none;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  transition: background 0.2s ease;
+}
+
+.logistics-notification:hover {
+  background: #edf6ec;
+  color: #2e7d32;
 }
 
 .logistics-notification .material-symbols-outlined {
@@ -176,9 +230,11 @@
   border-radius: 50%;
   background: #e9a23b;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 7px;
+  right: 7px;
 }
+
+/* USER */
 
 .logistics-user {
   display: flex;
@@ -213,17 +269,18 @@
   margin-top: 2px;
 }
 
-.logistics-mobile-brand {
-  display: none;
-}
-
-/* CONTENT */
+/* =========================================================
+   CONTENT
+   ========================================================= */
 
 .logistics-content {
   padding: 32px;
+  box-sizing: border-box;
 }
 
-/* WELCOME */
+/* =========================================================
+   WELCOME
+   ========================================================= */
 
 .logistics-welcome {
   background: linear-gradient(
@@ -251,8 +308,10 @@
 
 .logistics-welcome h1 {
   margin: 0;
+  color: #263238;
   font-size: 32px;
   line-height: 1.15;
+  font-weight: 700;
 }
 
 .logistics-welcome-text {
@@ -260,6 +319,7 @@
   max-width: 540px;
   line-height: 1.6;
   font-size: 14px;
+  margin: 15px 0;
 }
 
 .logistics-location {
@@ -275,6 +335,8 @@
   font-size: 18px;
 }
 
+/* WELCOME ILLUSTRATION */
+
 .logistics-illustration {
   position: relative;
   width: 180px;
@@ -282,6 +344,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .logistics-circle {
@@ -289,15 +352,31 @@
   height: 135px;
   border-radius: 50%;
   background: #dcebd5;
+  color: #2e7d32;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
+}
+
+.logistics-circle .material-symbols-outlined {
+  font-size: 54px;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 48;
 }
 
 .logistics-leaf {
   position: absolute;
-  font-size: 27px;
+  color: #66a368;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logistics-leaf .material-symbols-outlined {
+  font-size: 28px;
 }
 
 .leaf-one {
@@ -310,7 +389,9 @@
   left: 5px;
 }
 
-/* SECTION */
+/* =========================================================
+   SECTION
+   ========================================================= */
 
 .logistics-section {
   margin-top: 30px;
@@ -326,10 +407,14 @@
 
 .logistics-section-heading h2 {
   margin: 0;
+  color: #263238;
   font-size: 21px;
+  font-weight: 700;
 }
 
-/* STATS */
+/* =========================================================
+   STATS
+   ========================================================= */
 
 .logistics-stats {
   margin-top: 17px;
@@ -339,18 +424,28 @@
 }
 
 .logistics-stat-card {
-  background: white;
+  background: #ffffff;
   border: 1px solid #e4e2d8;
   border-radius: 13px;
   padding: 18px;
   display: flex;
   align-items: center;
   gap: 13px;
+  box-sizing: border-box;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.logistics-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(38, 50, 56, 0.06);
 }
 
 .logistics-stat-icon {
   width: 43px;
   height: 43px;
+  min-width: 43px;
   border-radius: 10px;
   background: #edf6ec;
   color: #2e7d32;
@@ -373,6 +468,7 @@
 
 .logistics-stat-card strong {
   display: block;
+  color: #263238;
   font-size: 24px;
   margin-top: 3px;
 }
@@ -383,11 +479,13 @@
   font-size: 11px;
 }
 
-/* ACTION */
+/* =========================================================
+   QUICK ACTION
+   ========================================================= */
 
 .logistics-action-card {
   margin-top: 17px;
-  background: white;
+  background: #ffffff;
   border: 1px solid #e4e2d8;
   border-radius: 13px;
   padding: 20px;
@@ -396,16 +494,22 @@
   gap: 15px;
   text-decoration: none;
   color: #263238;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .logistics-action-card:hover {
   border-color: #b8d2b5;
   transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(38, 50, 56, 0.06);
 }
 
 .logistics-action-icon {
   width: 48px;
   height: 48px;
+  min-width: 48px;
   border-radius: 11px;
   background: #edf6ec;
   color: #2e7d32;
@@ -414,8 +518,13 @@
   justify-content: center;
 }
 
+.logistics-action-icon .material-symbols-outlined {
+  font-size: 25px;
+}
+
 .logistics-action-card h3 {
   margin: 0;
+  color: #263238;
   font-size: 15px;
 }
 
@@ -423,6 +532,7 @@
   margin: 5px 0 0;
   color: #78909c;
   font-size: 12px;
+  line-height: 1.5;
 }
 
 .logistics-arrow {
@@ -431,13 +541,27 @@
   font-size: 22px;
 }
 
-/* RESPONSIVE */
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
 
 @media (max-width: 1050px) {
   .logistics-stats {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .logistics-content {
+    padding: 28px;
+  }
+
+  .logistics-welcome {
+    padding: 30px;
+  }
 }
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+   ========================================================= */
 
 @media (max-width: 800px) {
   .logistics-sidebar {
@@ -445,13 +569,12 @@
   }
 
   .logistics-top-bar {
+    min-height: 64px;
     padding: 0 18px;
   }
 
   .logistics-mobile-brand {
-    display: block;
-    font-weight: 800;
-    color: #2e7d32;
+    display: flex;
   }
 
   .logistics-search {
@@ -464,12 +587,17 @@
 
   .logistics-welcome {
     padding: 25px;
+    min-height: 220px;
   }
 
   .logistics-illustration {
     display: none;
   }
 }
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+   ========================================================= */
 
 @media (max-width: 550px) {
   .logistics-stats {
@@ -480,7 +608,59 @@
     display: none;
   }
 
+  .logistics-top-actions {
+    gap: 8px;
+  }
+
+  .logistics-welcome {
+    padding: 22px;
+  }
+
   .logistics-welcome h1 {
     font-size: 27px;
+  }
+
+  .logistics-welcome-text {
+    font-size: 13px;
+  }
+
+  .logistics-action-card {
+    padding: 17px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .logistics-top-bar {
+    padding: 0 13px;
+  }
+
+  .logistics-mobile-brand {
+    font-size: 18px;
+  }
+
+  .logistics-mobile-logo {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logistics-content {
+    padding: 15px;
+  }
+
+  .logistics-welcome {
+    border-radius: 14px;
+    padding: 20px;
+  }
+
+  .logistics-welcome h1 {
+    font-size: 24px;
+  }
+
+  .logistics-section {
+    margin-top: 24px;
   }
 }

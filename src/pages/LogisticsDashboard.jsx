@@ -5,6 +5,13 @@ import "./LogisticsDashboard.css";
 function LogisticsDashboard() {
   const partner = logisticsPartner;
 
+  const partnerInitials = partner.name
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
   return (
     <div className="logistics-dashboard">
 
@@ -14,14 +21,14 @@ function LogisticsDashboard() {
 
         <div className="logistics-brand">
 
-          <div className="logistics-brand-mark">
-            <span className="material-symbols-outlined">
-              local_shipping
-            </span>
-          </div>
+          <img
+            src="/logo.jpeg"
+            alt="सीधा-SAUDA Logo"
+            className="logistics-brand-logo"
+          />
 
           <div>
-            <h2>FarmConnect</h2>
+            <h2>सीधा-SAUDA</h2>
             <span>Logistics Network</span>
           </div>
 
@@ -96,7 +103,15 @@ function LogisticsDashboard() {
         <header className="logistics-top-bar">
 
           <div className="logistics-mobile-brand">
-            FarmConnect
+
+            <img
+              src="/logo.jpeg"
+              alt="सीधा-SAUDA Logo"
+              className="logistics-mobile-logo"
+            />
+
+            <span>सीधा-SAUDA</span>
+
           </div>
 
           <div className="logistics-search">
@@ -131,12 +146,7 @@ function LogisticsDashboard() {
             >
 
               <div className="logistics-avatar">
-                {partner.name
-                  .split(" ")
-                  .map((word) => word[0])
-                  .join("")
-                  .slice(0, 2)
-                  .toUpperCase()}
+                {partnerInitials}
               </div>
 
               <div>
@@ -161,7 +171,7 @@ function LogisticsDashboard() {
             <div>
 
               <p className="logistics-eyebrow">
-                LOGISTICS PARTNER PORTAL
+                सीधा-SAUDA LOGISTICS PORTAL
               </p>
 
               <h1>
@@ -190,15 +200,21 @@ function LogisticsDashboard() {
             <div className="logistics-illustration">
 
               <div className="logistics-circle">
-                🚚
+                <span className="material-symbols-outlined">
+                  local_shipping
+                </span>
               </div>
 
               <span className="logistics-leaf leaf-one">
-                🌿
+                <span className="material-symbols-outlined">
+                  eco
+                </span>
               </span>
 
               <span className="logistics-leaf leaf-two">
-                🍃
+                <span className="material-symbols-outlined">
+                  spa
+                </span>
               </span>
 
             </div>

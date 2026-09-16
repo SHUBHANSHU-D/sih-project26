@@ -60,10 +60,29 @@ function SellerRegister() {
     <div className="seller-register-container">
       <div className="seller-register-box">
 
+        {/* BRANDING */}
+
+        <div className="seller-register-brand">
+
+          <img
+            src="/logo.jpeg"
+            alt="सीधा-SAUDA Logo"
+            className="seller-register-logo"
+          />
+
+          <div>
+            <h2>सीधा-SAUDA</h2>
+            <p>किसान से सीधे बाजार तक</p>
+          </div>
+
+        </div>
+
         <h1>Seller Registration</h1>
 
         {/* Progress */}
+
         <div className="progress">
+
           <div className={section >= 1 ? "active-step" : ""}>
             1. Information
           </div>
@@ -75,16 +94,22 @@ function SellerRegister() {
           <div className={section >= 3 ? "active-step" : ""}>
             3. Other
           </div>
+
         </div>
 
         <form onSubmit={handleSubmit}>
 
           {/* SECTION 1 */}
+
           {section === 1 && (
             <div className="form-section">
+
               <h2>Information</h2>
 
-              <label className="inf">Company / Person Name</label>
+              <label className="inf">
+                Company / Person Name
+              </label>
+
               <input
                 type="text"
                 name="companyName"
@@ -95,6 +120,7 @@ function SellerRegister() {
               />
 
               <label>Contact Person</label>
+
               <input
                 type="text"
                 name="contactPerson"
@@ -105,6 +131,7 @@ function SellerRegister() {
               />
 
               <label>Mobile Number</label>
+
               <input
                 type="tel"
                 name="mobileNumber"
@@ -115,6 +142,7 @@ function SellerRegister() {
               />
 
               <label>Work Phone Number</label>
+
               <input
                 type="tel"
                 name="workPhone"
@@ -124,6 +152,7 @@ function SellerRegister() {
               />
 
               <label>Description</label>
+
               <textarea
                 name="description"
                 value={formData.description}
@@ -135,15 +164,19 @@ function SellerRegister() {
               <button type="button" onClick={nextSection}>
                 Next
               </button>
+
             </div>
           )}
 
           {/* SECTION 2 */}
+
           {section === 2 && (
             <div className="form-section">
+
               <h2>Authentication & Verification</h2>
 
               <label>Email</label>
+
               <input
                 type="email"
                 name="email"
@@ -154,6 +187,7 @@ function SellerRegister() {
               />
 
               <label>Password</label>
+
               <input
                 type="password"
                 name="password"
@@ -164,6 +198,7 @@ function SellerRegister() {
               />
 
               <label>Repeat Password</label>
+
               <input
                 type="password"
                 name="repeatPassword"
@@ -174,6 +209,7 @@ function SellerRegister() {
               />
 
               <label>Photo</label>
+
               <input
                 type="file"
                 name="photo"
@@ -183,6 +219,7 @@ function SellerRegister() {
               />
 
               <label>Trade License</label>
+
               <input
                 type="file"
                 name="tradeLicense"
@@ -192,6 +229,7 @@ function SellerRegister() {
               />
 
               <label>FSSAI Registration</label>
+
               <input
                 type="file"
                 name="fssaiRegistration"
@@ -201,23 +239,35 @@ function SellerRegister() {
               />
 
               <div className="button-row">
-                <button type="button" onClick={previousSection}>
+
+                <button
+                  type="button"
+                  onClick={previousSection}
+                >
                   Previous
                 </button>
 
-                <button type="button" onClick={nextSection}>
+                <button
+                  type="button"
+                  onClick={nextSection}
+                >
                   Next
                 </button>
+
               </div>
+
             </div>
           )}
 
           {/* SECTION 3 */}
+
           {section === 3 && (
             <div className="form-section">
+
               <h2>Other Information</h2>
 
               <label>Business Address</label>
+
               <textarea
                 name="address"
                 value={formData.address}
@@ -227,6 +277,7 @@ function SellerRegister() {
               />
 
               <label>Business Type</label>
+
               <input
                 type="text"
                 name="businessType"
@@ -236,18 +287,25 @@ function SellerRegister() {
               />
 
               <div className="button-row">
-                <button type="button" onClick={previousSection}>
+
+                <button
+                  type="button"
+                  onClick={previousSection}
+                >
                   Previous
                 </button>
 
                 <button type="submit">
                   Submit Registration
                 </button>
+
               </div>
+
             </div>
           )}
 
         </form>
+
       </div>
     </div>
   );

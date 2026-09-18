@@ -9,15 +9,16 @@ function BuyerDashboard() {
   const [buyerProfile, setBuyerProfile] = useState(null);
 
   const { totalItems } = useCart();
-const { orders } = useOrders();
+  const { orders } = useOrders();
 
-useEffect(() => {
-  const savedProfile = localStorage.getItem("buyerProfile");
+  useEffect(() => {
+    const savedProfile = localStorage.getItem("buyerProfile");
 
-  if (savedProfile) {
-    setBuyerProfile(JSON.parse(savedProfile));
-  }
+    if (savedProfile) {
+      setBuyerProfile(JSON.parse(savedProfile));
+    }
   }, []);
+
   const buyerName = buyerProfile?.name || "Buyer";
 
   const buyerInitials = buyerName
@@ -27,17 +28,12 @@ useEffect(() => {
     .slice(0, 2)
     .toUpperCase();
 
-    const unreadAlerts = alerts.filter(
-      (alert) => !alert.read
-    ).length;
+  const unreadAlerts = alerts.filter((alert) => !alert.read).length;
+
   return (
     <div className="buyer-dashboard">
-
-      {/* Sidebar */}
       <aside className="buyer-sidebar">
-
         <div className="brand">
-
           <img
             src="/logo.jpeg"
             alt="सीधा-SAUDA Logo"
@@ -48,68 +44,63 @@ useEffect(() => {
             <h2>सीधा-SAUDA</h2>
             <span>किसान से सीधे बाजार तक</span>
           </div>
-
         </div>
 
         <nav className="sidebar-menu">
-
           <Link to="/buyer-dashboard" className="menu-item active">
-            <span>⌂</span>
+            <span className="material-symbols-outlined">home</span>
             Home
           </Link>
 
           <Link to="/products" className="menu-item">
-            <span>▣</span>
+            <span className="material-symbols-outlined">inventory_2</span>
             Products
           </Link>
 
           <Link to="/categories" className="menu-item">
-            <span>◈</span>
+            <span className="material-symbols-outlined">category</span>
             Categories
           </Link>
 
           <Link to="/orders" className="menu-item">
-            <span>□</span>
+            <span className="material-symbols-outlined">receipt_long</span>
             Orders
           </Link>
 
           <Link to="/cart" className="menu-item">
-            <span>🛒</span>
+            <span className="material-symbols-outlined">shopping_cart</span>
             Cart
           </Link>
 
           <Link to="/payment" className="menu-item">
-            <span>₹</span>
+            <span className="material-symbols-outlined">payments</span>
             Payment
           </Link>
 
           <Link to="/delivery" className="menu-item">
-            <span>↗</span>
+            <span className="material-symbols-outlined">local_shipping</span>
             Delivery
           </Link>
 
           <Link to="/trace-order" className="menu-item">
-            <span>⌖</span>
+            <span className="material-symbols-outlined">location_on</span>
             Trace Order
           </Link>
 
           <Link to="/ai-insights" className="menu-item">
-            <span>✦</span>
+            <span className="material-symbols-outlined">auto_awesome</span>
             AI Insights
           </Link>
 
           <Link to="/alerts" className="menu-item">
-            <span>◉</span>
+            <span className="material-symbols-outlined">notifications</span>
             Alerts
           </Link>
-
-
         </nav>
 
         <div className="sidebar-bottom">
-
           <Link to="/profile" className="menu-item">
-            <span>○</span>
+            <span className="material-symbols-outlined">person</span>
             Profile
           </Link>
 
@@ -121,37 +112,25 @@ useEffect(() => {
               localStorage.removeItem("userRole");
             }}
           >
-            <span className="material-symbols-outlined">
-              logout
-            </span>
+            <span className="material-symbols-outlined">logout</span>
             Logout
           </Link>
-
         </div>
-
       </aside>
 
-
-      {/* Main Area */}
       <main className="buyer-main">
-
-        {/* Top Bar */}
         <header className="top-bar">
-
           <div className="mobile-brand">
-
             <img
               src="/logo.jpeg"
               alt="सीधा-SAUDA Logo"
               className="buyer-mobile-logo"
             />
-
             <span>सीधा-SAUDA</span>
-
           </div>
 
           <div className="top-search">
-            <span>⌕</span>
+            <span className="material-symbols-outlined">search</span>
             <input
               type="text"
               placeholder="Search products, farmers, categories..."
@@ -159,38 +138,26 @@ useEffect(() => {
           </div>
 
           <div className="top-actions">
-
             <Link to="/alerts" className="notification-icon">
               <span className="material-symbols-outlined">
                 notifications
               </span>
-
               <span className="notification-dot"></span>
-              
             </Link>
 
             <Link to="/profile" className="user-profile">
-              <div className="avatar">
-                {buyerInitials}
-              </div>
+              <div className="avatar">{buyerInitials}</div>
 
               <div>
                 <strong>{buyerName}</strong>
                 <small>My Account</small>
               </div>
             </Link>
-
           </div>
-
         </header>
 
-
-        {/* Page Content */}
         <div className="page-content">
-
-          {/* Welcome */}
           <section className="welcome-section">
-
             <div>
               <p className="eyebrow">WELCOME BACK</p>
 
@@ -201,8 +168,8 @@ useEffect(() => {
               </h1>
 
               <p className="welcome-text">
-                Discover quality agricultural products directly
-                from farmers, FPOs and trusted sellers.
+                Discover quality agricultural products directly from
+                farmers, FPOs and trusted sellers.
               </p>
 
               <div className="welcome-buttons">
@@ -217,29 +184,24 @@ useEffect(() => {
             </div>
 
             <div className="welcome-illustration">
-
               <img
                 src="/logo.jpeg"
                 alt="सीधा-SAUDA"
                 className="buyer-hero-logo"
               />
-
             </div>
           </section>
 
-          {/* ================= QUICK OVERVIEW ================= */}
-
           <section className="dashboard-overview">
-
             <div className="overview-card">
-
               <div className="overview-icon cart-overview-icon">
-                🛒
+                <span className="material-symbols-outlined">
+                  shopping_cart
+                </span>
               </div>
 
               <div>
                 <span>SHOPPING CART</span>
-
                 <strong>{totalItems}</strong>
 
                 <p>
@@ -252,19 +214,17 @@ useEffect(() => {
               <Link to="/cart" className="overview-link">
                 View →
               </Link>
-
             </div>
 
-
             <div className="overview-card">
-
               <div className="overview-icon order-overview-icon">
-                📦
+                <span className="material-symbols-outlined">
+                  package_2
+                </span>
               </div>
 
               <div>
                 <span>ORDERS</span>
-
                 <strong>{orders.length}</strong>
 
                 <p>
@@ -277,12 +237,9 @@ useEffect(() => {
               <Link to="/orders" className="overview-link">
                 View →
               </Link>
-
             </div>
 
-
             <div className="overview-card">
-
               <div className="overview-icon alert-overview-icon">
                 <span className="material-symbols-outlined">
                   notifications
@@ -291,7 +248,6 @@ useEffect(() => {
 
               <div>
                 <span>ALERTS</span>
-
                 <strong>{unreadAlerts}</strong>
 
                 <p>
@@ -304,14 +260,10 @@ useEffect(() => {
               <Link to="/alerts" className="overview-link">
                 View →
               </Link>
-
             </div>
-
           </section>
 
-          {/* Categories */}
           <section className="section">
-
             <div className="section-heading">
               <div>
                 <span className="section-label">EXPLORE</span>
@@ -323,60 +275,68 @@ useEffect(() => {
               </Link>
             </div>
 
-
             <div className="category-list">
-
-              <Link to="/categories/vegetables" className="category-item">
+              <Link
+                to="/categories/vegetables"
+                className="category-item"
+              >
                 <div className="category-icon vegetable">
-                  🥬
+                  <span className="material-symbols-outlined">eco</span>
                 </div>
+
                 <div>
                   <strong>Vegetables</strong>
                   <span>Fresh & seasonal</span>
                 </div>
               </Link>
 
-
-              <Link to="/categories/fruits" className="category-item">
+              <Link
+                to="/categories/fruits"
+                className="category-item"
+              >
                 <div className="category-icon fruit">
-                  🍎
+                  <span className="material-symbols-outlined">
+                    nutrition
+                  </span>
                 </div>
+
                 <div>
                   <strong>Fruits</strong>
                   <span>Farm fresh</span>
                 </div>
               </Link>
 
-
-              <Link to="/categories/grains" className="category-item">
+              <Link
+                to="/categories/grains"
+                className="category-item"
+              >
                 <div className="category-icon grain">
-                  🌾
+                  <span className="material-symbols-outlined">grass</span>
                 </div>
+
                 <div>
                   <strong>Grains</strong>
                   <span>Quality grains</span>
                 </div>
               </Link>
 
-
-              <Link to="/categories/pulses" className="category-item">
+              <Link
+                to="/categories/pulses"
+                className="category-item"
+              >
                 <div className="category-icon pulses">
-                  🫘
+                  <span className="material-symbols-outlined">spa</span>
                 </div>
+
                 <div>
                   <strong>Pulses</strong>
                   <span>Nutritious & fresh</span>
                 </div>
               </Link>
-
             </div>
-
           </section>
 
-
-          {/* Recommended Products */}
           <section className="section">
-
             <div className="section-heading">
               <div>
                 <span className="section-label">FROM OUR FARMERS</span>
@@ -388,92 +348,76 @@ useEffect(() => {
               </Link>
             </div>
 
-
             <div className="product-list">
-
               <div className="market-product">
-
                 <div className="product-photo potato">
-                  🥔
+                  <span className="material-symbols-outlined">
+                    agriculture
+                  </span>
                 </div>
 
                 <div className="product-info">
-                  <span className="product-category">
-                    Vegetables
-                  </span>
-
+                  <span className="product-category">Vegetables</span>
                   <h3>Fresh Potatoes</h3>
-
                   <p>Direct from local farmer</p>
 
                   <div className="product-bottom">
-                    <strong>₹30 <small>/ kg</small></strong>
+                    <strong>
+                      ₹30 <small>/ kg</small>
+                    </strong>
                     <button>Add</button>
                   </div>
                 </div>
-
               </div>
 
-
               <div className="market-product">
-
                 <div className="product-photo tomato">
-                  🍅
+                  <span className="material-symbols-outlined">
+                    nutrition
+                  </span>
                 </div>
 
                 <div className="product-info">
-                  <span className="product-category">
-                    Vegetables
-                  </span>
-
+                  <span className="product-category">Vegetables</span>
                   <h3>Fresh Tomatoes</h3>
-
                   <p>Farm fresh tomatoes</p>
 
                   <div className="product-bottom">
-                    <strong>₹40 <small>/ kg</small></strong>
+                    <strong>
+                      ₹40 <small>/ kg</small>
+                    </strong>
                     <button>Add</button>
                   </div>
                 </div>
-
               </div>
 
-
               <div className="market-product">
-
                 <div className="product-photo wheat">
-                  🌾
+                  <span className="material-symbols-outlined">grass</span>
                 </div>
 
                 <div className="product-info">
-                  <span className="product-category">
-                    Grains
-                  </span>
-
+                  <span className="product-category">Grains</span>
                   <h3>Premium Wheat</h3>
-
                   <p>Quality farm wheat</p>
 
                   <div className="product-bottom">
-                    <strong>₹35 <small>/ kg</small></strong>
+                    <strong>
+                      ₹35 <small>/ kg</small>
+                    </strong>
                     <button>Add</button>
                   </div>
                 </div>
-
               </div>
-
             </div>
-
           </section>
 
-
-          {/* Bottom Information */}
           <section className="dashboard-info">
-
             <div className="info-block">
-
               <div className="info-icon">
-                ✦
+                <span className="material-symbols-outlined">
+                  auto_awesome
+                </span>
               </div>
 
               <div>
@@ -485,17 +429,14 @@ useEffect(() => {
                 </p>
               </div>
 
-              <Link to="/ai-insights">
-                Explore →
-              </Link>
-
+              <Link to="/ai-insights">Explore →</Link>
             </div>
 
-
             <div className="info-block tracking-block">
-
               <div className="info-icon">
-                ⌖
+                <span className="material-symbols-outlined">
+                  location_on
+                </span>
               </div>
 
               <div>
@@ -506,18 +447,11 @@ useEffect(() => {
                 </p>
               </div>
 
-              <Link to="/trace-order">
-                Track →
-              </Link>
-
+              <Link to="/trace-order">Track →</Link>
             </div>
-
           </section>
-
         </div>
-
       </main>
-
     </div>
   );
 }

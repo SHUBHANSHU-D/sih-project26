@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Payment.css";
+import { createPayment } from "../services/api";
 
 function Payment() {
+  const navigate = useNavigate();
+
   const [paymentMethod, setPaymentMethod] = useState("upi");
   const [paymentStatus, setPaymentStatus] = useState("");
 
@@ -13,6 +16,11 @@ function Payment() {
     cvv: "",
   });
 
+  const orderId = localStorage.getItem("latestOrderId");
+  const orderAmount = Number(
+    localStorage.getItem("latestOrderAmount") || 0
+  );
+
   function handleChange(event) {
     const { name, value } = event.target;
 
@@ -22,25 +30,59 @@ function Payment() {
     });
   }
 
-  function handlePayment(event) {
+  async function handlePayment(event) {
     event.preventDefault();
+
+    if (!orderId) {
+      setPaymentStatus("No pending order found");
+      return;
+    }
+
+    if (paymentMethod === "cod") {
+      localStorage.setItem("lastOrderId", orderId);
+      localStorage.removeItem("latestOrderId");
+      localStorage.removeItem("latestOrderAmount");
+
+      setPaymentStatus("Order placed successfully");
+
+      setTimeout(() => {
+        navigate("/orders");
+      }, 800);
+
+      return;
+    }
 
     setPaymentStatus("Payment processing...");
 
-    setTimeout(() => {
-      setPaymentStatus("Payment successful");
-    }, 1200);
+    try {
+      const result = await createPayment(
+        Number(orderId),
+        paymentMethod
+      );
+
+      if (result.payment_status === "success") {
+        localStorage.setItem("lastOrderId", orderId);
+
+        localStorage.removeItem("latestOrderId");
+        localStorage.removeItem("latestOrderAmount");
+
+        setPaymentStatus("Payment successful");
+
+        setTimeout(() => {
+          navigate("/orders");
+        }, 800);
+      } else {
+        setPaymentStatus("Payment failed");
+      }
+    } catch (err) {
+      setPaymentStatus(`Payment failed: ${err.message}`);
+    }
   }
 
   return (
     <div className="payment-page">
-
-      {/* HEADER */}
-
       <header className="payment-header">
-
         <div className="payment-brand">
-
           <img
             src="/logo.jpeg"
             alt="सीधा-SAUDA Logo"
@@ -51,7 +93,6 @@ function Payment() {
             <h1>सीधा-SAUDA</h1>
             <p>किसान से सीधे बाजार तक</p>
           </div>
-
         </div>
 
         <Link
@@ -60,16 +101,10 @@ function Payment() {
         >
           ← Dashboard
         </Link>
-
       </header>
 
-
-      {/* MAIN CONTENT */}
-
       <main className="payment-content">
-
         <div className="payment-title">
-
           <p className="payment-eyebrow">
             सीधा-SAUDA CHECKOUT
           </p>
@@ -79,18 +114,11 @@ function Payment() {
           <p>
             Choose a payment method to complete your order.
           </p>
-
         </div>
 
-
         <div className="payment-layout">
-
-          {/* PAYMENT METHODS */}
-
           <section className="payment-card">
-
             <div className="payment-card-heading">
-
               <div className="payment-heading-icon">
                 <span className="material-symbols-outlined">
                   payments
@@ -101,14 +129,9 @@ function Payment() {
                 <h3>Payment Method</h3>
                 <p>Select your preferred payment option.</p>
               </div>
-
             </div>
 
-
             <div className="payment-methods">
-
-              {/* UPI */}
-
               <button
                 type="button"
                 className={`payment-method ${
@@ -116,7 +139,6 @@ function Payment() {
                 }`}
                 onClick={() => setPaymentMethod("upi")}
               >
-
                 <span className="material-symbols-outlined">
                   account_balance_wallet
                 </span>
@@ -129,11 +151,7 @@ function Payment() {
                 <span className="payment-radio">
                   {paymentMethod === "upi" ? "●" : "○"}
                 </span>
-
               </button>
-
-
-              {/* CARD */}
 
               <button
                 type="button"
@@ -142,7 +160,6 @@ function Payment() {
                 }`}
                 onClick={() => setPaymentMethod("card")}
               >
-
                 <span className="material-symbols-outlined">
                   credit_card
                 </span>
@@ -155,11 +172,7 @@ function Payment() {
                 <span className="payment-radio">
                   {paymentMethod === "card" ? "●" : "○"}
                 </span>
-
               </button>
-
-
-              {/* COD */}
 
               <button
                 type="button"
@@ -168,7 +181,6 @@ function Payment() {
                 }`}
                 onClick={() => setPaymentMethod("cod")}
               >
-
                 <span className="material-symbols-outlined">
                   local_atm
                 </span>
@@ -181,24 +193,16 @@ function Payment() {
                 <span className="payment-radio">
                   {paymentMethod === "cod" ? "●" : "○"}
                 </span>
-
               </button>
-
             </div>
-
-
-            {/* PAYMENT FORM */}
 
             <form
               className="payment-form"
               onSubmit={handlePayment}
             >
-
               {paymentMethod === "upi" && (
                 <>
-                  <label htmlFor="upiId">
-                    UPI ID
-                  </label>
+                  <label htmlFor="upiId">UPI ID</label>
 
                   <input
                     id="upiId"
@@ -212,10 +216,8 @@ function Payment() {
                 </>
               )}
 
-
               {paymentMethod === "card" && (
                 <>
-
                   <label htmlFor="cardNumber">
                     Card Number
                   </label>
@@ -231,11 +233,8 @@ function Payment() {
                     required
                   />
 
-
                   <div className="payment-form-row">
-
                     <div>
-
                       <label htmlFor="expiry">
                         Expiry Date
                       </label>
@@ -250,12 +249,9 @@ function Payment() {
                         maxLength="5"
                         required
                       />
-
                     </div>
 
-
                     <div>
-
                       <label htmlFor="cvv">
                         CVV
                       </label>
@@ -270,18 +266,13 @@ function Payment() {
                         maxLength="4"
                         required
                       />
-
                     </div>
-
                   </div>
-
                 </>
               )}
 
-
               {paymentMethod === "cod" && (
                 <div className="cod-message">
-
                   <span className="material-symbols-outlined">
                     local_shipping
                   </span>
@@ -290,20 +281,17 @@ function Payment() {
                     <strong>Cash on Delivery</strong>
 
                     <p>
-                      You will pay the delivery amount when
-                      your order is delivered.
+                      You will pay when your order is delivered.
                     </p>
                   </div>
-
                 </div>
               )}
-
 
               <button
                 type="submit"
                 className="payment-submit-button"
+                disabled={!orderId}
               >
-
                 <span className="material-symbols-outlined">
                   lock
                 </span>
@@ -311,44 +299,35 @@ function Payment() {
                 {paymentMethod === "cod"
                   ? "Place Order"
                   : "Proceed to Payment"}
-
               </button>
-
 
               {paymentStatus && (
                 <div
                   className={`payment-status ${
-                    paymentStatus === "Payment successful"
+                    paymentStatus === "Payment successful" ||
+                    paymentStatus === "Order placed successfully"
                       ? "success"
                       : ""
                   }`}
                 >
                   <span className="material-symbols-outlined">
-                    {paymentStatus === "Payment successful"
+                    {paymentStatus === "Payment successful" ||
+                    paymentStatus === "Order placed successfully"
                       ? "check_circle"
                       : "sync"}
                   </span>
 
                   {paymentStatus}
-
                 </div>
               )}
-
             </form>
-
           </section>
 
-
-          {/* ORDER SUMMARY */}
-
           <aside className="payment-summary">
-
             <div className="payment-summary-icon">
-
               <span className="material-symbols-outlined">
                 receipt_long
               </span>
-
             </div>
 
             <p className="payment-summary-label">
@@ -359,40 +338,34 @@ function Payment() {
 
             <div className="summary-row">
               <span>Products</span>
-              <strong>₹450</strong>
+              <strong>₹{orderAmount.toFixed(2)}</strong>
             </div>
 
             <div className="summary-row">
               <span>Delivery</span>
-              <strong>₹40</strong>
+              <strong>₹0</strong>
             </div>
 
             <div className="summary-divider"></div>
 
             <div className="summary-total">
               <span>Total</span>
-              <strong>₹490</strong>
+              <strong>₹{orderAmount.toFixed(2)}</strong>
             </div>
 
             <div className="payment-security">
-
               <span className="material-symbols-outlined">
                 verified_user
               </span>
 
               <p>
-                Payment details will be securely handled
-                by the payment service when integrated.
+                Payment details will be securely handled by the
+                payment service when integrated.
               </p>
-
             </div>
-
           </aside>
-
         </div>
-
       </main>
-
     </div>
   );
 }

@@ -1,8 +1,75 @@
 import { Link } from "react-router-dom";
 import { aiInsights } from "../data/aiInsights";
+import { predictDemand, optimizeRoute } from "../services/api";
+import { useState } from "react";
 import "./AIInsights.css";
 
 function AIInsights() {
+  const [demandResult, setDemandResult] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+const [routeResult, setRouteResult] = useState(null);
+const [routeLoading, setRouteLoading] = useState(false);
+const [routeError, setRouteError] = useState("");
+
+  async function handleRouteOptimization() {
+  setRouteLoading(true);
+  setRouteError("");
+
+  try {
+    const result = await optimizeRoute(
+      {
+        name: "Bhopal Farm Hub",
+        latitude: 23.2599,
+        longitude: 77.4126
+      },
+      [
+        {
+          name: "Bhopal Warehouse",
+          latitude: 23.2599,
+          longitude: 77.4326
+        },
+        {
+          name: "Bhopal Market",
+          latitude: 23.2500,
+          longitude: 77.4000
+        },
+        {
+          name: "LNCT Campus",
+          latitude: 23.3068,
+          longitude: 77.3600
+        }
+      ]
+    );
+
+    setRouteResult(result);
+  } catch (err) {
+    setRouteError(err.message);
+  } finally {
+    setRouteLoading(false);
+  }
+}
+
+  async function handleDemandPrediction() {
+    setLoading(true);
+    setError("");
+
+    try {
+      const result = await predictDemand(
+        "Tomato",
+        [420, 450, 470, 510, 550, 590, 620],
+        7
+      );
+
+      setDemandResult(result);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <div className="ai-insights-page">
 
@@ -162,12 +229,69 @@ function AIInsights() {
                 </p>
 
 
-                <button
-                  className="insight-button"
-                  type="button"
-                >
-                  View Insight →
-                </button>
+                {insight.type === "forecast" && (
+                  <button
+                    className="insight-button"
+                    type="button"
+                    onClick={handleDemandPrediction}
+                  >
+                    View Demand Forecast →
+                  </button>
+                )}
+
+                {insight.type === "route" && (
+                  <>
+                    <button
+                      className="insight-button"
+                      type="button"
+                      onClick={handleRouteOptimization}
+                    >
+                      Optimize Route →
+                    </button>
+
+                    {routeLoading && (
+                      <p>Optimizing delivery route...</p>
+                    )}
+
+                    {routeError && (
+                      <p>{routeError}</p>
+                    )}
+
+                    {routeResult && (
+                      <div className="ai-result">
+                        <h3>Optimized Delivery Route</h3>
+
+                        <p>
+                          <strong>Total Stops:</strong>{" "}
+                          {routeResult.total_stops}
+                        </p>
+
+                        <p>
+                          <strong>Estimated Distance:</strong>{" "}
+                          {routeResult.estimated_distance_km} km
+                        </p>
+
+                        <h4>Route</h4>
+
+                        <ol>
+                          {routeResult.route.map((stop, index) => (
+                            <li key={index}>{stop}</li>
+                          ))}
+                        </ol>
+                      </div>
+                    )}
+                  </>
+                )}
+
+                {insight.type !== "forecast" &&
+                insight.type !== "route" && (
+                  <button
+                    className="insight-button"
+                    type="button"
+                  >
+                    View Insight →
+                  </button>
+                )}
 
               </div>
 
@@ -184,36 +308,79 @@ function AIInsights() {
           FUTURE AI
           ========================= */}
 
-      <section className="ai-future-card">
+      {loading && (
+        <section className="ai-intro-card">
+          <div>
+            <h2>Generating AI prediction...</h2>
+            <p>Please wait while the backend analyzes the demand data.</p>
+          </div>
+        </section>
+      )}
 
-        <div className="future-logo">
+      {error && (
+        <section className="ai-intro-card">
+          <div>
+            <h2>AI prediction failed</h2>
+            <p>{error}</p>
+          </div>
+        </section>
+      )}
+{demandResult && (
+  <section className="ai-intro-card">
+    <div>
+      <span>AI DEMAND FORECAST</span>
 
-          <img
-            src="/logo.jpeg"
-            alt="सीधा-SAUDA"
-          />
+      <h2>{demandResult.product_name}</h2>
 
-        </div>
+      <p>
+        Predicted demand: <strong>{demandResult.predicted_demand}</strong>
+      </p>
 
-        <div>
+      <p>
+        Forecast period: <strong>{demandResult.forecast_days} days</strong>
+      </p>
 
-          <h3>
-            AI will become more powerful with real data
-          </h3>
+      <p>
+        Market trend: <strong>{demandResult.trend}</strong>
+      </p>
 
-          <p>
-            These insights currently use marketplace data
-            and mock values. Later, the backend AI system
-            can provide real predictions using product,
-            demand, price and supply-chain data.
-          </p>
-
-        </div>
-
-      </section>
-
+      <p>
+        Recommendation: <strong>{demandResult.recommendation}</strong>
+      </p>
     </div>
-  );
+  </section>
+)}
+
+<section className="ai-future-card">
+
+  <div className="future-logo">
+
+    <img
+      src="/logo.jpeg"
+      alt="सीधा-SAUDA"
+    />
+
+  </div>
+
+  <div>
+
+    <h3>
+      AI will become more powerful with real data
+    </h3>
+
+    <p>
+      These insights currently use marketplace data
+      and mock values. Later, the backend AI system
+      can provide real predictions using product,
+      demand, price and supply-chain data.
+    </p>
+
+  </div>
+
+</section>
+
+</div>
+);
 }
 
 export default AIInsights;

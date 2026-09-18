@@ -1,73 +1,68 @@
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL;
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
+export async function apiRequest(endpoint, options = {}) {
+    const response = await fetch(`${API_URL}${endpoint}`, {
+        headers: {
+            "Content-Type": "application/json",
+            ...(options.headers || {})
+        },
+        ...options
+    });
 
-async function apiRequest(endpoint, options = {}) {
-  const response = await fetch(
-    `${API_BASE_URL}${endpoint}`,
-    {
-      ...options,
-      headers: {
-        "Content-Type": "application/json",
-        ...(options.headers || {}),
-      },
-    }
-  );
-
-  if (!response.ok) {
-    let errorMessage = "Something went wrong";
-
-    try {
-      const errorData = await response.json();
-
-      errorMessage =
-        errorData.detail ||
-        errorData.message ||
-        errorMessage;
-    } catch {
-      // Backend did not return JSON
-    }
-
-    throw new Error(errorMessage);
-  }
-
-  if (response.status === 204) {
-    return null;
-  }
-
-  return response.json();
-}
-
-
-/*
-  Simple backend connection test.
-  The endpoint must exist in your teammate's backend.
-*/
-async function testBackendConnection(endpoint = "/") {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}${endpoint}`
-    );
+    const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(
-        `Backend responded with status ${response.status}`
-      );
+        throw new Error(data.detail || data.message || "API request failed");
     }
 
-    return true;
-  } catch (error) {
-    console.error(
-      "Backend connection failed:",
-      error
-    );
-
-    return false;
-  }
+    return data;
 }
 
+export async function getProducts() {
+    return apiRequest("/products/");
+}
 
-export {
-  API_BASE_URL,
-  apiRequest,
-  testBackendConnection,
-};
+export async function predictDemand(productName, historicalDemand, forecastDays = 7) {
+    return apiRequest("/ai/demand-prediction", {
+        method: "POST",
+        body: JSON.stringify({
+            product_name: productName,
+            historical_demand: historicalDemand,
+            forecast_days: forecastDays
+        })
+    });
+}
+
+export async function optimizeRoute(start, destinations) {
+    return apiRequest("/ai/route-optimization", {
+        method: "POST",
+        body: JSON.stringify({
+            start,
+            destinations
+        })
+    });
+}
+
+export async function createOrder(orderData) {
+  return apiRequest("/orders/", {
+    method: "POST",
+    body: JSON.stringify(orderData),
+  });
+}
+
+export async function createPayment(orderId, paymentMethod) {
+  return apiRequest("/payments/", {
+    method: "POST",
+    body: JSON.stringify({
+      order_id: orderId,
+      payment_method: paymentMethod,
+    }),
+  });
+}
+
+export async function getTracking(orderId) {
+  return apiRequest(`/tracking/order/${orderId}`);
+}
+
+export async function getOrders(consumerId) {
+  return apiRequest(`/orders/consumer/${consumerId}`);
+}

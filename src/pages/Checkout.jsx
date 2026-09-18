@@ -1,20 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { createOrder } from "../services/api";
 import "./Checkout.css";
-import { useOrders } from "../context/OrderContext";
 
 function Checkout() {
-    const navigate = useNavigate();
-    
-    const {
-        cart,
-        totalItems,
-        totalPrice,
-        clearCart,
-    } = useCart();
-    
-    const { placeOrder } = useOrders();
+  const navigate = useNavigate();
+
+  const {
+    cart,
+    totalItems,
+    totalPrice,
+    clearCart,
+  } = useCart();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -24,6 +22,8 @@ function Checkout() {
     state: "",
     pincode: "",
   });
+
+  const [isPlacingOrder, setIsPlacingOrder] = useState(false);
 
   const deliveryCharge = totalPrice >= 500 ? 0 : 40;
   const finalTotal = totalPrice + deliveryCharge;
@@ -37,25 +37,65 @@ function Checkout() {
     });
   }
 
-  function handlePlaceOrder(event) {
-  event.preventDefault();
+  async function handlePlaceOrder(event) {
+    event.preventDefault();
 
-  const order = placeOrder({
-    customer: formData,
-    items: cart,
-    productTotal: totalPrice,
-    deliveryCharge,
-    finalTotal,
-  });
+    if (isPlacingOrder) {
+      return;
+    }
 
-  console.log("Order Created:", order);
+    setIsPlacingOrder(true);
 
-  clearCart();
+    try {
+      localStorage.removeItem("latestOrderId");
+      localStorage.removeItem("latestOrderAmount");
+      localStorage.removeItem("lastOrderId");
 
-  alert(`Order ${order.id} placed successfully!`);
+      const createdOrders = [];
 
-  navigate("/orders");
-}
+      for (const item of cart) {
+        const order = await createOrder({
+          consumer_id: 3,
+          product_id: item.id,
+          quantity_ordered: item.quantity,
+          delivery_address: formData.address,
+          delivery_city: formData.city,
+          delivery_pincode: formData.pincode,
+        });
+
+        createdOrders.push(order);
+      }
+
+      if (createdOrders.length === 0) {
+        throw new Error("No order was created");
+      }
+
+      const latestOrder =
+        createdOrders[createdOrders.length - 1];
+
+      localStorage.setItem(
+        "latestOrderId",
+        String(latestOrder.order_id)
+      );
+
+      localStorage.setItem(
+        "latestOrderAmount",
+        String(latestOrder.total_amount)
+      );
+
+      localStorage.setItem(
+        "lastOrderId",
+        String(latestOrder.order_id)
+      );
+
+      clearCart();
+
+      navigate("/payment");
+    } catch (err) {
+      alert(`Order failed: ${err.message}`);
+      setIsPlacingOrder(false);
+    }
+  }
 
   if (cart.length === 0) {
     return (
@@ -68,7 +108,10 @@ function Checkout() {
             to checkout.
           </p>
 
-          <Link to="/products" className="checkout-shop-button">
+          <Link
+            to="/products"
+            className="checkout-shop-button"
+          >
             Browse Products
           </Link>
         </div>
@@ -78,28 +121,28 @@ function Checkout() {
 
   return (
     <div className="checkout-page">
-
-      {/* Header */}
       <header className="checkout-header">
         <div>
           <h1>Checkout</h1>
-          <p>Complete your delivery details to place your order.</p>
+
+          <p>
+            Complete your delivery details to place your order.
+          </p>
         </div>
 
-        <Link to="/cart" className="back-cart-link">
+        <Link
+          to="/cart"
+          className="back-cart-link"
+        >
           ← Back to Cart
         </Link>
       </header>
 
       <div className="checkout-layout">
-
-        {/* Delivery Information */}
         <section className="delivery-form">
-
           <h2>Delivery Information</h2>
 
           <form onSubmit={handlePlaceOrder}>
-
             <label>Full Name</label>
 
             <input
@@ -134,7 +177,6 @@ function Checkout() {
             />
 
             <div className="location-row">
-
               <div>
                 <label>City</label>
 
@@ -160,7 +202,6 @@ function Checkout() {
                   required
                 />
               </div>
-
             </div>
 
             <label>PIN Code</label>
@@ -178,27 +219,24 @@ function Checkout() {
             <button
               type="submit"
               className="place-order-button"
+              disabled={isPlacingOrder}
             >
-              Place Order — ₹{finalTotal}
+              {isPlacingOrder
+                ? "Creating Order..."
+                : `Place Order — ₹${finalTotal}`}
             </button>
-
           </form>
-
         </section>
 
-        {/* Order Summary */}
         <aside className="checkout-summary">
-
           <h2>Order Summary</h2>
 
           <div className="checkout-items">
-
             {cart.map((item) => (
               <div
                 className="checkout-item"
                 key={item.id}
               >
-
                 <div>
                   <strong>{item.name}</strong>
 
@@ -210,10 +248,8 @@ function Checkout() {
                 <strong>
                   ₹{item.quantity * item.price}
                 </strong>
-
               </div>
             ))}
-
           </div>
 
           <div className="checkout-divider"></div>
@@ -247,12 +283,9 @@ function Checkout() {
 
           <p className="checkout-note">
             Delivery charges are calculated based on the
-            current order value. Final charges will come from
-            the backend later.
+            current order value.
           </p>
-
         </aside>
-
       </div>
     </div>
   );

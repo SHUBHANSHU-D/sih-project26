@@ -1,128 +1,54 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useCart } from "../context/CartContext";
 import { Link, useSearchParams } from "react-router-dom";
 import "./Products.css";
 import { categories } from "../data/categories";
+import { getProducts } from "../services/api";
 
-const products = [
-  {
-    id: 1,
-    name: "Potatoes",
-    category: "Vegetables",
-    price: 30,
-    unit: "kg",
-    source: "Local Farmer",
-    location: "Indore",
-    stock: 250,
-    grade: "Grade A",
-    delivery: "1–2 days",
-    image:
-      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?auto=format&fit=crop&w=700&q=80",
-    description:
-      "Fresh farm potatoes suitable for household and bulk consumption.",
-    farmerPrice: 24,
-    supplyCost: 3,
-    logisticsCost: 3,
-  },
-  {
-    id: 2,
-    name: "Tomatoes",
-    category: "Vegetables",
-    price: 40,
-    unit: "kg",
-    source: "Farmer Group",
-    location: "Dewas",
-    stock: 180,
-    grade: "Grade A",
-    delivery: "1–2 days",
-    image:
-      "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?auto=format&fit=crop&w=700&q=80",
-    description:
-      "Fresh red tomatoes sourced directly from a local farmer group.",
-    farmerPrice: 32,
-    supplyCost: 4,
-    logisticsCost: 4,
-  },
-  {
-    id: 3,
-    name: "Wheat",
-    category: "Grains",
-    price: 35,
-    unit: "kg",
-    source: "FPO",
-    location: "Ujjain",
-    stock: 500,
-    grade: "Premium",
-    delivery: "2–3 days",
-    image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=700&q=80",
-    description:
-      "Quality wheat supplied through a farmer producer organization.",
-    farmerPrice: 29,
-    supplyCost: 2,
-    logisticsCost: 4,
-  },
-  {
-    id: 4,
-    name: "Onions",
-    category: "Vegetables",
-    price: 28,
-    unit: "kg",
-    source: "Local Farmer",
-    location: "Indore",
-    stock: 320,
-    grade: "Grade A",
-    delivery: "1–2 days",
-    image:
-      "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?auto=format&fit=crop&w=700&q=80",
-    description:
-      "Fresh onions collected directly from local agricultural producers.",
-    farmerPrice: 22,
-    supplyCost: 3,
-    logisticsCost: 3,
-  },
-  {
-    id: 5,
-    name: "Mangoes",
-    category: "Fruits",
-    price: 80,
-    unit: "kg",
-    source: "Farmer Group",
-    location: "Khandwa",
-    stock: 120,
-    grade: "Premium",
-    delivery: "2–3 days",
-    image:
-      "https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=700&q=80",
-    description:
-      "Naturally ripened seasonal mangoes supplied directly by farmers.",
-    farmerPrice: 68,
-    supplyCost: 5,
-    logisticsCost: 7,
-  },
-  {
-    id: 6,
-    name: "Pulses",
-    category: "Pulses",
-    price: 95,
-    unit: "kg",
-    source: "FPO",
-    location: "Dhar",
-    stock: 200,
-    grade: "Premium",
-    delivery: "2–3 days",
-    image:
-      "https://images.unsplash.com/photo-1515543904379-3d757afe72e4?auto=format&fit=crop&w=700&q=80",
-    description:
-      "Clean and graded pulses sourced through a farmer producer organization.",
-    farmerPrice: 82,
-    supplyCost: 6,
-    logisticsCost: 7,
-  },
-];
+
 
 function Products() {
+  const [products, setProducts] = useState([]);
+  const [productsLoading, setProductsLoading] = useState(true);
+  const [productsError, setProductsError] = useState("");
   const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+  async function loadProducts() {
+    try {
+      const data = await getProducts();
+
+      const mappedProducts = data.map((product) => ({
+        id: product.product_id,
+        name: product.product_name,
+        category: product.category,
+        price: Number(product.price),
+        unit: product.unit_type,
+        source: "Farmer",
+        location: "Available Location",
+        stock: product.quantity_available,
+        grade: product.quality_grade
+          ? `Grade ${product.quality_grade}`
+          : "Grade A",
+        delivery: "2–3 days",
+        image: "/logo.jpeg",
+        description:
+          product.description || "Fresh agricultural product.",
+        farmerPrice: Number(product.price),
+        supplyCost: 0,
+        logisticsCost: 0,
+      }));
+
+      setProducts(mappedProducts);
+    } catch (err) {
+      setProductsError(err.message);
+    } finally {
+      setProductsLoading(false);
+    }
+  }
+
+  loadProducts();
+}, []);
 
   const initialCategory =
     searchParams.get("category") || "All";
@@ -329,6 +255,19 @@ function handleAddToCart(product) {
 
       {/* Results */}
       <section className="products-section">
+        {productsLoading && (
+          <div className="no-products">
+            <h3>Loading products...</h3>
+            <p>Fetching products from the marketplace.</p>
+          </div>
+        )}
+
+        {productsError && (
+          <div className="no-products">
+            <h3>Unable to load products</h3>
+            <p>{productsError}</p>
+          </div>
+        )}
 
         <div className="products-title">
           <div>

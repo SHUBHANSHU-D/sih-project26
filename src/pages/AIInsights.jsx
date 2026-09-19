@@ -73,15 +73,10 @@ const [routeError, setRouteError] = useState("");
   return (
     <div className="ai-insights-page">
 
-      {/* =========================
-          HEADER
-          ========================= */}
-
       <header className="ai-insights-header">
 
         <div className="ai-header-content">
 
-          {/* BRAND */}
 
           <div className="ai-brand">
 
@@ -101,8 +96,6 @@ const [routeError, setRouteError] = useState("");
 
           </div>
 
-
-          {/* PAGE TITLE */}
 
           <div className="ai-page-title">
 
@@ -130,11 +123,6 @@ const [routeError, setRouteError] = useState("");
         </Link>
 
       </header>
-
-
-      {/* =========================
-          INTRODUCTION
-          ========================= */}
 
       <section className="ai-intro-card">
 
@@ -165,11 +153,6 @@ const [routeError, setRouteError] = useState("");
 
       </section>
 
-
-      {/* =========================
-          INSIGHT OPTIONS
-          ========================= */}
-
       <section className="insights-section">
 
         <div className="insights-heading">
@@ -199,9 +182,6 @@ const [routeError, setRouteError] = useState("");
               className="insight-card"
               key={insight.id}
             >
-
-              {/* Insight icon */}
-
               <div className="insight-icon">
                 <span className="material-symbols-outlined">
                   auto_awesome
@@ -303,11 +283,6 @@ const [routeError, setRouteError] = useState("");
 
       </section>
 
-
-      {/* =========================
-          FUTURE AI
-          ========================= */}
-
       {loading && (
         <section className="ai-intro-card">
           <div>
@@ -364,16 +339,9 @@ const [routeError, setRouteError] = useState("");
 
   <div>
 
-    <h3>
-      AI will become more powerful with real data
-    </h3>
+    
 
-    <p>
-      These insights currently use marketplace data
-      and mock values. Later, the backend AI system
-      can provide real predictions using product,
-      demand, price and supply-chain data.
-    </p>
+    
 
   </div>
 

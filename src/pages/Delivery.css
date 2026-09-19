@@ -5,7 +5,6 @@
   color: #263238;
 }
 
-/* Header */
 
 .delivery-header {
   max-width: 1200px;
@@ -36,7 +35,6 @@
   font-weight: 600;
 }
 
-/* Main status */
 
 .delivery-status-card {
   max-width: 1200px;
@@ -103,7 +101,6 @@
   font-size: 20px;
 }
 
-/* Information cards */
 
 .delivery-info-grid {
   max-width: 1200px;
@@ -134,7 +131,6 @@
   font-size: 16px;
 }
 
-/* Current location */
 
 .current-location {
   max-width: 1200px;
@@ -178,7 +174,6 @@
   color: #607d8b;
 }
 
-/* Address */
 
 .delivery-address-card {
   max-width: 1200px;
@@ -201,7 +196,6 @@
   margin: 6px 0;
 }
 
-/* Timeline */
 
 .timeline-card {
   max-width: 1200px;
@@ -239,7 +233,6 @@
   font-weight: 700;
 }
 
-/* Timeline stages */
 
 .delivery-timeline {
   position: relative;
@@ -346,7 +339,6 @@
   color: #78909c;
 }
 
-/* Trace section */
 
 .trace-delivery-card {
   max-width: 1200px;
@@ -389,7 +381,6 @@
   background: #1b5e20;
 }
 
-/* Empty state */
 
 .delivery-empty {
   max-width: 650px;
@@ -416,7 +407,6 @@
   margin-bottom: 25px;
 }
 
-/* Responsive */
 
 @media (max-width: 900px) {
   .delivery-page {

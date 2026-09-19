@@ -2,7 +2,7 @@ export const alerts = [
   {
     id: 1,
     type: "price",
-    icon: "📉",
+    icon: "",
     title: "Price Update",
     message: "Potato prices have decreased recently.",
     time: "2 hours ago",
@@ -12,7 +12,7 @@ export const alerts = [
   {
     id: 2,
     type: "delivery",
-    icon: "🚚",
+    icon: "",
     title: "Delivery Update",
     message: "Your order is currently out for delivery.",
     time: "4 hours ago",
@@ -22,7 +22,7 @@ export const alerts = [
   {
     id: 3,
     type: "market",
-    icon: "📊",
+    icon: "",
     title: "Market Insight",
     message: "Demand for wheat is showing an increasing trend.",
     time: "Yesterday",
@@ -32,7 +32,7 @@ export const alerts = [
   {
     id: 4,
     type: "stock",
-    icon: "📦",
+    icon: "",
     title: "Availability Alert",
     message: "Mango availability may decrease soon.",
     time: "Yesterday",

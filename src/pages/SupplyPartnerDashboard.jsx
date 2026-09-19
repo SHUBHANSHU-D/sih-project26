@@ -8,7 +8,6 @@ function SupplyPartnerDashboard() {
   return (
     <div className="supply-dashboard">
 
-      {/* ================= SIDEBAR ================= */}
 
       <aside className="supply-sidebar">
 
@@ -97,7 +96,6 @@ function SupplyPartnerDashboard() {
         </nav>
 
 
-        {/* ================= SIDEBAR BOTTOM ================= */}
 
         <div className="supply-sidebar-bottom">
 
@@ -127,12 +125,10 @@ function SupplyPartnerDashboard() {
       </aside>
 
 
-      {/* ================= MAIN ================= */}
 
       <main className="supply-main">
 
 
-        {/* ================= TOP BAR ================= */}
 
         <header className="supply-top-bar">
 
@@ -219,12 +215,10 @@ function SupplyPartnerDashboard() {
         </header>
 
 
-        {/* ================= PAGE CONTENT ================= */}
 
         <div className="supply-page-content">
 
 
-          {/* ================= WELCOME ================= */}
 
           <section className="supply-welcome">
 
@@ -294,7 +288,6 @@ function SupplyPartnerDashboard() {
           </section>
 
 
-          {/* ================= OVERVIEW ================= */}
 
           <section className="supply-section">
 
@@ -375,7 +368,6 @@ function SupplyPartnerDashboard() {
               </div>
 
 
-              {/* ACTIVE SHIPMENTS */}
 
               <div className="supply-stat-card">
 
@@ -407,7 +399,6 @@ function SupplyPartnerDashboard() {
               </div>
 
 
-              {/* COMPLETED ORDERS */}
 
               <div className="supply-stat-card">
 
@@ -443,8 +434,6 @@ function SupplyPartnerDashboard() {
           </section>
 
 
-          {/* ================= QUICK ACTIONS ================= */}
-
           <section className="supply-section">
 
             <div className="supply-section-heading">
@@ -460,7 +449,6 @@ function SupplyPartnerDashboard() {
             <div className="supply-actions">
 
 
-              {/* INVENTORY */}
 
               <Link
                 to="/supply-partner-inventory"
@@ -495,7 +483,6 @@ function SupplyPartnerDashboard() {
               </Link>
 
 
-              {/* REQUESTS */}
 
               <Link
                 to="/supply-partner-orders"
@@ -530,7 +517,6 @@ function SupplyPartnerDashboard() {
               </Link>
 
 
-              {/* SHIPMENTS */}
 
               <Link
                 to="/supply-partner-shipments"
@@ -569,7 +555,6 @@ function SupplyPartnerDashboard() {
           </section>
 
 
-          {/* ================= PARTNER INFORMATION ================= */}
 
           <section className="supply-section">
 

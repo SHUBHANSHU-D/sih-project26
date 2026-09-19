@@ -48,7 +48,6 @@ function SupplyPartnerShipments() {
   return (
     <div className="supply-shipments-page">
 
-      {/* HEADER */}
 
       <header className="shipments-header">
 
@@ -73,7 +72,6 @@ function SupplyPartnerShipments() {
 
       </header>
 
-      {/* SUMMARY */}
 
       <section className="shipments-summary">
 

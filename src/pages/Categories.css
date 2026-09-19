@@ -1,6 +1,3 @@
-/* =========================
-   CATEGORIES PAGE
-   ========================= */
 
 .categories-page {
   min-height: 100vh;
@@ -10,10 +7,6 @@
   font-family: Arial, sans-serif;
 }
 
-
-/* =========================
-   HEADER
-   ========================= */
 
 .categories-header {
   max-width: 1200px;
@@ -25,9 +18,6 @@
 }
 
 
-/* =========================
-   HEADER CONTENT
-   ========================= */
 
 .categories-header-content {
   flex: 1;
@@ -35,9 +25,6 @@
 }
 
 
-/* =========================
-   BRAND
-   ========================= */
 
 .categories-brand {
   display: flex;
@@ -47,7 +34,6 @@
 }
 
 
-/* REAL LOGO */
 
 .categories-brand-logo {
   width: 62px;
@@ -58,7 +44,6 @@
 }
 
 
-/* BRAND NAME */
 
 .categories-brand h1 {
   margin: 0;
@@ -69,7 +54,6 @@
 }
 
 
-/* BRAND TAGLINE */
 
 .categories-tagline {
   margin: 4px 0 0;
@@ -78,9 +62,6 @@
 }
 
 
-/* =========================
-   PAGE TITLE
-   ========================= */
 
 .categories-title {
   max-width: 760px;
@@ -110,9 +91,6 @@
 }
 
 
-/* =========================
-   BACK BUTTON
-   ========================= */
 
 .categories-back-button {
   text-decoration: none;
@@ -131,10 +109,6 @@
   border-color: #b9d1b6;
 }
 
-
-/* =========================
-   INTRO
-   ========================= */
 
 .categories-intro {
   max-width: 1200px;
@@ -156,7 +130,6 @@
 }
 
 
-/* CATEGORY COUNT */
 
 .category-count {
   background: #e8f5e9;
@@ -169,10 +142,6 @@
 }
 
 
-/* =========================
-   CATEGORY GRID
-   ========================= */
-
 .categories-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -182,9 +151,6 @@
 }
 
 
-/* =========================
-   CATEGORY CARD
-   ========================= */
 
 .category-card {
   background: white;
@@ -212,10 +178,6 @@
 }
 
 
-/* =========================
-   CATEGORY ICON
-   ========================= */
-
 .category-icon {
   width: 65px;
   height: 65px;
@@ -231,9 +193,6 @@
 }
 
 
-/* =========================
-   CATEGORY CONTENT
-   ========================= */
 
 .category-content h3 {
   margin: 0 0 9px;
@@ -249,7 +208,6 @@
 }
 
 
-/* CATEGORY BUTTON */
 
 .category-button {
   display: inline-block;
@@ -266,9 +224,6 @@
 }
 
 
-/* =========================
-   BOTTOM NOTE
-   ========================= */
 
 .categories-note {
   max-width: 1200px;
@@ -286,7 +241,6 @@
 }
 
 
-/* NOTE ICON */
 
 .note-icon {
   width: 45px;
@@ -303,7 +257,6 @@
 }
 
 
-/* NOTE TEXT */
 
 .categories-note h3 {
   margin: 0 0 5px;
@@ -318,10 +271,6 @@
   line-height: 1.5;
 }
 
-
-/* =========================
-   TABLET
-   ========================= */
 
 @media (max-width: 1000px) {
 
@@ -348,9 +297,6 @@
 }
 
 
-/* =========================
-   MOBILE
-   ========================= */
 
 @media (max-width: 650px) {
 
@@ -417,10 +363,6 @@
   }
 }
 
-
-/* =========================
-   VERY SMALL SCREENS
-   ========================= */
 
 @media (max-width: 400px) {
 

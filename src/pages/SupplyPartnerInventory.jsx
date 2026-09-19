@@ -106,7 +106,6 @@ function SupplyPartnerInventory() {
   return (
     <div className="inventory-page">
 
-      {/* HEADER */}
 
       <header className="inventory-header">
 

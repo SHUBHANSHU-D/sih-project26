@@ -22,7 +22,7 @@ function Delivery() {
         </header>
 
         <div className="delivery-empty">
-          <div className="empty-icon">🚚</div>
+          <div className="empty-icon"></div>
           <h2>No active delivery</h2>
           <p>
             Once you place an order, its delivery information will appear
@@ -89,10 +89,9 @@ function Delivery() {
         </Link>
       </header>
 
-      {/* Delivery Status */}
       <section className="delivery-status-card">
         <div className="status-main">
-          <div className="truck-icon">🚚</div>
+          <div className="truck-icon"></div>
 
           <div>
             <span className="status-label">CURRENT STATUS</span>
@@ -107,7 +106,6 @@ function Delivery() {
         </div>
       </section>
 
-      {/* Order Information */}
       <section className="delivery-info-grid">
         <div className="info-card">
           <span>ORDER ID</span>
@@ -130,9 +128,8 @@ function Delivery() {
         </div>
       </section>
 
-      {/* Current Location */}
       <section className="current-location">
-        <div className="location-icon">📍</div>
+        <div className="location-icon"></div>
 
         <div>
           <span>YOUR ORDER IS CURRENTLY AT</span>
@@ -144,7 +141,6 @@ function Delivery() {
         </div>
       </section>
 
-      {/* Delivery Address */}
       <section className="delivery-address-card">
         <div>
           <span>DELIVERING TO</span>
@@ -162,7 +158,6 @@ function Delivery() {
         </div>
       </section>
 
-      {/* Delivery Timeline */}
       <section className="timeline-card">
         <div className="section-heading">
           <div>
@@ -217,7 +212,6 @@ function Delivery() {
         </div>
       </section>
 
-      {/* Trace Order */}
       <section className="trace-delivery-card">
         <div>
           <h2>Want to see the complete supply chain?</h2>

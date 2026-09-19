@@ -68,7 +68,6 @@ function SupplyPartnerRegister() {
           Join the agricultural supply network
         </p>
 
-        {/* Progress */}
         <div className="progress">
           <div className={section >= 1 ? "active-step" : ""}>
             1. Information
@@ -85,7 +84,6 @@ function SupplyPartnerRegister() {
 
         <form onSubmit={handleSubmit}>
 
-          {/* SECTION 1 */}
           {section === 1 && (
             <div className="form-section">
 
@@ -183,7 +181,6 @@ function SupplyPartnerRegister() {
             </div>
           )}
 
-          {/* SECTION 2 */}
           {section === 2 && (
             <div className="form-section">
 
@@ -273,7 +270,6 @@ function SupplyPartnerRegister() {
             </div>
           )}
 
-          {/* SECTION 3 */}
           {section === 3 && (
             <div className="form-section">
 

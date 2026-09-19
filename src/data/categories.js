@@ -2,7 +2,7 @@ export const categories = [
   {
     id: "vegetables",
     name: "Vegetables",
-    icon: "🥕",
+    icon: "",
     description:
       "Fresh vegetables sourced directly through the supply chain.",
     subcategories: [
@@ -16,7 +16,7 @@ export const categories = [
   {
     id: "fruits",
     name: "Fruits",
-    icon: "🍎",
+    icon: "",
     description:
       "Fresh seasonal fruits with transparent sourcing.",
     subcategories: [
@@ -41,7 +41,7 @@ export const categories = [
   {
     id: "pulses",
     name: "Pulses",
-    icon: "🫘",
+    icon: "",
     description:
       "Nutritious pulses sourced from farmers and FPOs.",
     subcategories: [

@@ -1,0 +1,319 @@
+/* =========================
+   LOGIN PAGE
+   ========================= */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f5ec;
+  padding: 30px 20px;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LOGIN CARD
+   ========================= */
+
+.login-card {
+  width: 525px;
+  max-width: 100%;
+  padding: 45px 50px 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.09);
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   BRAND
+   ========================= */
+
+.login-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+
+/* REAL LOGO */
+
+.login-logo {
+  width: 125px;
+  height: 125px;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+}
+
+
+/* WEBSITE NAME */
+
+.login-brand h1 {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.2px;
+}
+
+
+/* HINDI TAGLINE */
+
+.login-brand p {
+  margin: 8px 0 0;
+  color: #78909c;
+  font-size: 17px;
+  font-weight: 400;
+}
+
+
+/* =========================
+   LOGIN HEADING
+   ========================= */
+
+.login-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+
+/* WELCOME BACK */
+
+.welcome-text {
+  display: block;
+  margin-bottom: 10px;
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+
+/* MAIN HEADING */
+
+.login-heading h2 {
+  margin: 0;
+  color: #263238;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+
+/* DESCRIPTION */
+
+.login-heading p {
+  margin: 10px 0 0;
+  color: #78909c;
+  font-size: 16px;
+}
+
+
+/* =========================
+   FORM
+   ========================= */
+
+.form-group {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+
+/* LABEL */
+
+.form-group label {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+  color: #534c4c;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+
+/* INPUT + SELECT */
+
+.form-group input,
+.form-group select {
+  display: block;
+  width: 100%;
+  height: 52px;
+  padding: 0 15px;
+  border: 1px solid #d5d8d2;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #263238;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* FOCUS */
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2e7d32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.10);
+}
+
+
+/* PLACEHOLDER */
+
+.form-group input::placeholder {
+  color: #9aa5ad;
+}
+
+
+/* =========================
+   FORGOT PASSWORD
+   ========================= */
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -4px;
+  margin-bottom: 22px;
+}
+
+.forgot-password button {
+  border: none;
+  background: transparent;
+  color: #2e7d32;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.forgot-password button:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   SIGN IN BUTTON
+   ========================= */
+
+.login-button {
+  display: block;
+  width: 100%;
+  height: 55px;
+  padding: 0;
+  border: none;
+  border-radius: 9px;
+  background: #2e7d32;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
+}
+
+.login-button:hover {
+  background: #256628;
+}
+
+.login-button:active {
+  transform: scale(0.99);
+}
+
+
+/* =========================
+   REGISTER SECTION
+   ========================= */
+
+.login-register {
+  margin-top: 27px;
+  padding-top: 23px;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+}
+
+
+/* REGISTER TEXT */
+
+.login-register p {
+  margin: 9px 0;
+  color: #4e575c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* REGISTER LINKS */
+
+.login-register a {
+  color: #2e7d32;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 600px) {
+
+  .login-page {
+    padding: 20px 15px;
+  }
+
+  .login-card {
+    width: 100%;
+    padding: 35px 25px 30px;
+    border-radius: 15px;
+  }
+
+  .login-logo {
+    width: 105px;
+    height: 105px;
+  }
+
+  .login-brand h1 {
+    font-size: 31px;
+  }
+
+  .login-brand p {
+    font-size: 15px;
+  }
+
+  .login-heading h2 {
+    font-size: 24px;
+  }
+
+  .login-heading p {
+    font-size: 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 50px;
+    font-size: 15px;
+  }
+
+  .login-button {
+    height: 52px;
+    font-size: 17px;
+  }
+
+  .login-register p {
+    font-size: 13px;
+  }
+}

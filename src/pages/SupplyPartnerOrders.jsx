@@ -30,7 +30,6 @@ function SupplyPartnerOrders() {
   return (
     <div className="supply-orders-page">
 
-      {/* HEADER */}
 
       <header className="orders-header">
 
@@ -55,7 +54,6 @@ function SupplyPartnerOrders() {
 
       </header>
 
-      {/* SUMMARY */}
 
       <section className="orders-summary">
 

@@ -16,8 +16,10 @@ function Cart() {
       <div className="cart-page">
         <div className="empty-cart">
           <div className="empty-cart-icon">🛒</div>
+          <br></br>
 
           <h1>Your Cart is Empty</h1>
+          <br></br>
 
           <p>
             Add fresh products from farmers and verified
@@ -35,7 +37,6 @@ function Cart() {
   return (
     <div className="cart-page">
 
-      {/* Header */}
       <header className="cart-header">
         <div>
           <h1>Your Cart</h1>
@@ -49,7 +50,6 @@ function Cart() {
 
       <div className="cart-layout">
 
-        {/* Cart Items */}
         <section className="cart-items">
 
           {cart.map((item) => (
@@ -83,7 +83,6 @@ function Cart() {
 
               </div>
 
-              {/* Quantity */}
               <div className="cart-quantity">
 
                 <span>Quantity</span>
@@ -120,7 +119,6 @@ function Cart() {
 
               </div>
 
-              {/* Item Total */}
               <div className="item-total">
 
                 <strong>
@@ -143,7 +141,6 @@ function Cart() {
 
         </section>
 
-        {/* Order Summary */}
         <aside className="cart-summary">
 
           <h2>Order Summary</h2>

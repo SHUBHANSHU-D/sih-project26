@@ -5,14 +5,12 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  // Add product to cart
   function addToCart(product, quantity) {
     setCart((currentCart) => {
       const existingProduct = currentCart.find(
         (item) => item.id === product.id
       );
 
-      // Product already exists
       if (existingProduct) {
         return currentCart.map((item) =>
           item.id === product.id
@@ -27,7 +25,6 @@ export function CartProvider({ children }) {
         );
       }
 
-      // New product
       return [
         ...currentCart,
         {
@@ -38,14 +35,12 @@ export function CartProvider({ children }) {
     });
   }
 
-  // Remove product completely
   function removeFromCart(productId) {
     setCart((currentCart) =>
       currentCart.filter((item) => item.id !== productId)
     );
   }
 
-  // Change product quantity
   function updateQuantity(productId, quantity) {
     setCart((currentCart) =>
       currentCart.map((item) => {
@@ -66,18 +61,15 @@ export function CartProvider({ children }) {
     );
   }
 
-  // Empty entire cart
   function clearCart() {
     setCart([]);
   }
 
-  // Total number of kg/items
   const totalItems = cart.reduce(
     (total, item) => total + item.quantity,
     0
   );
 
-  // Total price
   const totalPrice = cart.reduce(
     (total, item) => total + item.price * item.quantity,
     0

@@ -154,7 +154,6 @@ function handleAddToCart(product) {
   return (
     <div className="products-page">
 
-      {/* Header */}
       <header className="products-header">
         <div className="products-brand">
 
@@ -188,7 +187,6 @@ function handleAddToCart(product) {
         </div>
       </header>
 
-      {/* Filters */}
       <section className="product-filters">
 
         <div className="search-box">
@@ -253,7 +251,6 @@ function handleAddToCart(product) {
 
       </section>
 
-      {/* Results */}
       <section className="products-section">
         {productsLoading && (
           <div className="no-products">
@@ -297,7 +294,6 @@ function handleAddToCart(product) {
                   key={product.id}
                 >
 
-                  {/* Image */}
                   <div className="product-image">
                     <img
                       src={product.image}
@@ -309,7 +305,6 @@ function handleAddToCart(product) {
                     </span>
                   </div>
 
-                  {/* Information */}
                   <div className="product-info">
 
                     <span className="product-category">
@@ -352,7 +347,6 @@ function handleAddToCart(product) {
 
                     </div>
 
-                    {/* Quantity */}
                     <div className="quantity-section">
 
                       <span>Quantity</span>
@@ -383,7 +377,6 @@ function handleAddToCart(product) {
 
                     </div>
 
-                    {/* Buttons */}
                     <div className="product-actions">
 
                       <button
@@ -417,7 +410,6 @@ function handleAddToCart(product) {
 
       </section>
 
-      {/* Product Details Modal */}
       {selectedProduct && (
         <div
           className="modal-overlay"

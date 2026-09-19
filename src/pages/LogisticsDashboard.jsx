@@ -15,7 +15,6 @@ function LogisticsDashboard() {
   return (
     <div className="logistics-dashboard">
 
-      {/* SIDEBAR */}
 
       <aside className="logistics-sidebar">
 
@@ -93,12 +92,8 @@ function LogisticsDashboard() {
         </div>
 
       </aside>
-
-      {/* MAIN */}
-
       <main className="logistics-main">
 
-        {/* TOP BAR */}
 
         <header className="logistics-top-bar">
 
@@ -160,11 +155,9 @@ function LogisticsDashboard() {
 
         </header>
 
-        {/* CONTENT */}
 
         <div className="logistics-content">
 
-          {/* WELCOME */}
 
           <section className="logistics-welcome">
 
@@ -221,7 +214,6 @@ function LogisticsDashboard() {
 
           </section>
 
-          {/* OVERVIEW */}
 
           <section className="logistics-section">
 
@@ -236,7 +228,6 @@ function LogisticsDashboard() {
 
             <div className="logistics-stats">
 
-              {/* PENDING */}
 
               <div className="logistics-stat-card">
 
@@ -258,7 +249,6 @@ function LogisticsDashboard() {
 
               </div>
 
-              {/* ACTIVE */}
 
               <div className="logistics-stat-card">
 
@@ -280,7 +270,6 @@ function LogisticsDashboard() {
 
               </div>
 
-              {/* COMPLETED */}
 
               <div className="logistics-stat-card">
 
@@ -302,7 +291,6 @@ function LogisticsDashboard() {
 
               </div>
 
-              {/* ASSIGNED */}
 
               <div className="logistics-stat-card">
 
@@ -328,7 +316,6 @@ function LogisticsDashboard() {
 
           </section>
 
-          {/* QUICK ACTION */}
 
           <section className="logistics-section">
 

@@ -37,7 +37,6 @@ function Login() {
 
       <div className="login-card">
 
-        {/* ================= BRAND ================= */}
 
         <div className="login-brand">
 
@@ -54,7 +53,6 @@ function Login() {
         </div>
 
 
-        {/* ================= HEADING ================= */}
 
         <div className="login-heading">
 
@@ -73,11 +71,9 @@ function Login() {
         </div>
 
 
-        {/* ================= LOGIN FORM ================= */}
 
         <form onSubmit={handleLogin}>
 
-          {/* ROLE */}
 
           <div className="form-group">
 
@@ -110,7 +106,6 @@ function Login() {
           </div>
 
 
-          {/* EMAIL */}
 
           <div className="form-group">
 
@@ -132,7 +127,6 @@ function Login() {
           </div>
 
 
-          {/* PASSWORD */}
 
           <div className="form-group">
 
@@ -154,7 +148,6 @@ function Login() {
           </div>
 
 
-          {/* FORGOT PASSWORD */}
 
           <div className="forgot-password">
 
@@ -172,7 +165,6 @@ function Login() {
           </div>
 
 
-          {/* SIGN IN */}
 
           <button
             type="submit"
@@ -184,7 +176,6 @@ function Login() {
         </form>
 
 
-        {/* ================= REGISTRATION ================= */}
 
         <div className="login-register">
 

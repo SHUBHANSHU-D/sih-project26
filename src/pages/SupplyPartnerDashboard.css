@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* ================= MAIN ================= */
 
 .supply-dashboard {
   min-height: 100vh;
@@ -15,7 +14,6 @@
 }
 
 
-/* ================= SIDEBAR ================= */
 
 .supply-sidebar {
   width: 245px;
@@ -32,7 +30,6 @@
 }
 
 
-/* ================= BRAND ================= */
 
 .supply-brand {
   display: flex;
@@ -64,7 +61,6 @@
 }
 
 
-/* ================= MENU ================= */
 
 .supply-menu {
   display: flex;
@@ -110,7 +106,6 @@
 }
 
 
-/* ================= SIDEBAR BOTTOM ================= */
 
 .supply-sidebar-bottom {
   margin-top: auto;
@@ -121,7 +116,6 @@
 }
 
 
-/* ================= MAIN AREA ================= */
 
 .supply-main {
   flex: 1;
@@ -129,7 +123,6 @@
 }
 
 
-/* ================= TOP BAR ================= */
 
 .supply-top-bar {
   height: 75px;
@@ -193,7 +186,6 @@
 }
 
 
-/* ================= TOP ACTIONS ================= */
 
 .supply-top-actions {
   display: flex;
@@ -252,7 +244,6 @@
 }
 
 
-/* ================= USER ================= */
 
 .supply-user-profile {
   display: flex;
@@ -300,7 +291,6 @@
 }
 
 
-/* ================= CONTENT ================= */
 
 .supply-page-content {
   max-width: 1250px;
@@ -311,7 +301,6 @@
 }
 
 
-/* ================= WELCOME ================= */
 
 .supply-welcome {
   background: #e9f0e4;
@@ -392,7 +381,6 @@
 }
 
 
-/* ================= ILLUSTRATION ================= */
 
 .supply-welcome-illustration {
   width: 200px;
@@ -459,7 +447,6 @@
 }
 
 
-/* ================= SECTION ================= */
 
 .supply-section {
   margin-top: 35px;
@@ -492,7 +479,6 @@
 }
 
 
-/* ================= STATS ================= */
 
 .supply-stats {
   display: grid;
@@ -567,7 +553,6 @@
 }
 
 
-/* ================= QUICK ACTIONS ================= */
 
 .supply-actions {
   display: grid;
@@ -650,7 +635,6 @@
 }
 
 
-/* ================= INFO ================= */
 
 .supply-info-card {
   background: #faf1e6;
@@ -721,7 +705,6 @@
 }
 
 
-/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1000px) {
 

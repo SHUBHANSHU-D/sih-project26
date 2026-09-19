@@ -7,17 +7,15 @@ function RoleRoute({ allowedRole, children }) {
   const userRole =
     localStorage.getItem("userRole");
 
-  // User is not logged in
   if (!isLoggedIn) {
     return <Navigate to="/login" replace />;
   }
 
-  // User has the correct role
   if (userRole === allowedRole) {
     return children;
   }
 
-  // Redirect to the correct dashboard
+  
   if (userRole === "buyer") {
     return (
       <Navigate
@@ -45,7 +43,6 @@ function RoleRoute({ allowedRole, children }) {
     );
   }
 
-  // Unknown role
   return <Navigate to="/login" replace />;
 }
 

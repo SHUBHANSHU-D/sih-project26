@@ -40,15 +40,11 @@ function Alerts() {
   return (
     <div className="alerts-page">
 
-      {/* =========================
-          HEADER
-          ========================= */}
 
       <header className="alerts-header">
 
         <div className="alerts-header-content">
 
-          {/* BRAND */}
 
           <div className="alerts-brand">
 
@@ -71,7 +67,7 @@ function Alerts() {
           </div>
 
 
-          {/* PAGE TITLE */}
+          
 
           <div className="alerts-page-title">
 
@@ -100,10 +96,6 @@ function Alerts() {
 
       </header>
 
-
-      {/* =========================
-          SUMMARY
-          ========================= */}
 
       <section className="alerts-summary">
 
@@ -146,9 +138,7 @@ function Alerts() {
       </section>
 
 
-      {/* =========================
-          FILTERS
-          ========================= */}
+     
 
       <section className="alerts-controls">
 
@@ -195,9 +185,7 @@ function Alerts() {
       </section>
 
 
-      {/* =========================
-          ALERT LIST
-          ========================= */}
+      
 
       <section className="alerts-list">
 
@@ -237,7 +225,7 @@ function Alerts() {
               }
             >
 
-              {/* ALERT ICON */}
+
 
               <div className="alert-icon">
 
@@ -254,7 +242,7 @@ function Alerts() {
               </div>
 
 
-              {/* ALERT CONTENT */}
+           
 
               <div className="alert-content">
 
@@ -283,7 +271,6 @@ function Alerts() {
               </div>
 
 
-              {/* PRIORITY */}
 
               <span
                 className={`priority-badge ${alert.priority}`}

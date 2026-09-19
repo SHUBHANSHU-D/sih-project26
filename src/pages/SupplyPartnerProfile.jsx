@@ -292,7 +292,6 @@ function SupplyPartnerProfile() {
 
           </section>
 
-          {/* VERIFICATION */}
 
           <section className="profile-card">
 

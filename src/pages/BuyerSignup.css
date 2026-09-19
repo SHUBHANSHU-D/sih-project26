@@ -20,8 +20,6 @@
   box-sizing: border-box;
 }
 
-/* Heading */
-
 .buyer-signup-box h1 {
   text-align: center;
   margin: 0 0 10px;
@@ -30,13 +28,11 @@
   font-weight: 700;
 }
 
-/* General paragraph */
 
 .buyer-signup-box p {
   color: #607d8b;
 }
 
-/* Subtitle */
 
 .signup-subtitle {
   text-align: center;
@@ -46,7 +42,6 @@
   line-height: 1.6;
 }
 
-/* Labels */
 
 .buyer-signup-box label {
   display: block;
@@ -57,7 +52,6 @@
   font-size: 14px;
 }
 
-/* Inputs */
 
 .buyer-signup-box input {
   width: 100%;
@@ -87,7 +81,6 @@
   box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
 }
 
-/* Create Account button */
 
 .buyer-signup-box button {
   width: 100%;
@@ -116,7 +109,6 @@
   transform: translateY(0);
 }
 
-/* Login link */
 
 .login-link {
   text-align: center;
@@ -136,7 +128,6 @@
   text-decoration: underline;
 }
 
-/* Material Symbols */
 
 .notification-icon {
   width: 42px;
@@ -164,7 +155,6 @@
     "opsz" 24;
 }
 
-/* Tablet */
 
 @media (max-width: 600px) {
   .buyer-signup-container {
@@ -185,7 +175,6 @@
   }
 }
 
-/* Mobile */
 
 @media (max-width: 400px) {
   .buyer-signup-container {

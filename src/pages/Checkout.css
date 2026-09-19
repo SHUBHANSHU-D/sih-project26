@@ -5,7 +5,6 @@
   color: #263238;
 }
 
-/* Header */
 
 .checkout-header {
   display: flex;
@@ -31,7 +30,6 @@
   font-weight: 600;
 }
 
-/* Layout */
 
 .checkout-layout {
   display: grid;
@@ -40,7 +38,6 @@
   align-items: start;
 }
 
-/* Delivery Form */
 
 .delivery-form,
 .checkout-summary {
@@ -86,15 +83,12 @@
   resize: vertical;
 }
 
-/* City / State */
-
 .location-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
 }
 
-/* Button */
 
 .place-order-button {
   width: 100%;
@@ -113,7 +107,6 @@
   background: #256b29;
 }
 
-/* Order Items */
 
 .checkout-items {
   display: flex;
@@ -138,7 +131,6 @@
   font-size: 12px;
 }
 
-/* Summary */
 
 .checkout-divider {
   border-top: 1px solid #e5e8e4;
@@ -175,8 +167,6 @@
   line-height: 1.5;
 }
 
-/* Empty */
-
 .empty-checkout {
   max-width: 500px;
   margin: 100px auto;
@@ -205,7 +195,6 @@
   font-weight: 600;
 }
 
-/* Responsive */
 
 @media (max-width: 850px) {
   .checkout-layout {

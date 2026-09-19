@@ -71,7 +71,9 @@ function Orders() {
     return (
       <div className="orders-page">
         <div className="empty-orders">
-          <h1>Unable to Load Orders</h1>
+          <h1>Unable to Load </h1>
+          <h1>Orders</h1>
+          <br></br>
           <p>{error}</p>
 
           <Link
@@ -96,7 +98,7 @@ function Orders() {
           </div>
 
           <h1>No Orders Yet</h1>
-
+          <br></br>
           <p>
             Your placed orders will appear here.
           </p>

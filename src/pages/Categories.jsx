@@ -6,7 +6,6 @@ function Categories() {
   return (
     <div className="categories-page">
 
-      {/* ================= HEADER ================= */}
 
         <header className="categories-header">
 
@@ -57,7 +56,6 @@ function Categories() {
         </header>
 
 
-      {/* ================= CATEGORY INTRO ================= */}
 
       <section className="categories-intro">
 
@@ -76,7 +74,6 @@ function Categories() {
       </section>
 
 
-      {/* ================= CATEGORY CARDS ================= */}
 
       <section className="categories-grid">
 
@@ -106,7 +103,6 @@ function Categories() {
             </div>
 
 
-            {/* SUBCATEGORIES */}
 
             <div className="subcategory-section">
 
@@ -139,7 +135,6 @@ function Categories() {
             </div>
 
 
-            {/* VIEW CATEGORY */}
 
             <Link
               to={`/products?category=${encodeURIComponent(
@@ -158,7 +153,6 @@ function Categories() {
       </section>
 
 
-      {/* ================= MARKETPLACE NOTE ================= */}
 
       <section className="categories-note">
 
@@ -180,7 +174,6 @@ function Categories() {
       </section>
 
 
-      {/* ================= FOOTER LINK ================= */}
 
       <div className="categories-footer">
 

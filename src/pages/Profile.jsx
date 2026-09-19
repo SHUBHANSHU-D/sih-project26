@@ -103,11 +103,9 @@ function Profile() {
       </div>
 
 
-      {/* PROFILE CARD */}
 
       <div className="profile-main-card">
 
-        {/* USER HEADER */}
 
         <div className="profile-user-header">
 

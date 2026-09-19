@@ -5,7 +5,6 @@
   padding: 35px 45px;
 }
 
-/* HEADER */
 
 .shipments-header {
   margin-bottom: 30px;
@@ -37,7 +36,6 @@
   margin-top: 8px;
 }
 
-/* SUMMARY */
 
 .shipments-summary {
   display: grid;

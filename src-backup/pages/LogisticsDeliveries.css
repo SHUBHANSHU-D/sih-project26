@@ -1,0 +1,390 @@
+.logistics-deliveries-page {
+  min-height: 100vh;
+  background: #f7f5ec;
+  color: #263238;
+  padding: 35px 45px;
+}
+
+/* HEADER */
+
+.logistics-deliveries-header {
+  margin-bottom: 30px;
+}
+
+.logistics-deliveries-header-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 35px;
+}
+
+/* BRAND */
+
+.logistics-deliveries-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 230px;
+}
+
+.logistics-deliveries-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.logistics-deliveries-brand h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #263238;
+}
+
+.logistics-deliveries-brand span {
+  display: block;
+  margin-top: 3px;
+  color: #78909c;
+  font-size: 10px;
+}
+
+/* PAGE TITLE */
+
+.logistics-deliveries-title {
+  flex: 1;
+}
+
+.logistics-deliveries-back {
+  display: inline-block;
+  color: #2e7d32;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.logistics-deliveries-back:hover {
+  text-decoration: underline;
+}
+
+.logistics-deliveries-eyebrow {
+  margin: 0 0 5px;
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.logistics-deliveries-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.logistics-deliveries-subtitle {
+  color: #78909c;
+  margin-top: 8px;
+}
+
+/* SUMMARY */
+
+.logistics-delivery-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.logistics-delivery-summary-card {
+  background: white;
+  border: 1px solid #e4e2d8;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logistics-delivery-summary-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 11px;
+  background: #e9f4e8;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logistics-delivery-summary-icon .material-symbols-outlined {
+  font-size: 23px;
+}
+
+.logistics-delivery-summary-card small {
+  display: block;
+  color: #78909c;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.logistics-delivery-summary-card strong {
+  display: block;
+  font-size: 25px;
+  margin-top: 4px;
+}
+
+/* CARD */
+
+.logistics-deliveries-card {
+  background: white;
+  border: 1px solid #e4e2d8;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.logistics-deliveries-card-header {
+  padding: 22px 25px;
+  border-bottom: 1px solid #eceae2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logistics-deliveries-card-header p {
+  margin: 0 0 4px;
+  color: #2e7d32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logistics-deliveries-card-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.logistics-deliveries-card-header > span {
+  color: #78909c;
+  font-size: 13px;
+}
+
+/* ITEM */
+
+.logistics-delivery-item {
+  padding: 22px 25px;
+  border-bottom: 1px solid #eeeeea;
+}
+
+.logistics-delivery-item:last-child {
+  border-bottom: none;
+}
+
+.logistics-delivery-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.logistics-delivery-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 11px;
+  background: #edf6ec;
+  color: #2e7d32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logistics-delivery-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.logistics-delivery-title h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.logistics-delivery-id {
+  margin: 4px 0;
+  color: #78909c;
+  font-size: 12px;
+}
+
+.logistics-delivery-buyer {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* STATUS */
+
+.logistics-delivery-status {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.logistics-delivery-status.assigned {
+  background: #fff4df;
+  color: #9a6818;
+}
+
+.logistics-delivery-status.accepted {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.logistics-delivery-status.picked-up {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+.logistics-delivery-status.in-transit {
+  background: #f3e5f5;
+  color: #7b1fa2;
+}
+
+.logistics-delivery-status.delivered {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+/* DETAILS */
+
+.logistics-delivery-details {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 25px;
+  margin: 20px 0 0 59px;
+  padding: 16px;
+  background: #faf9f4;
+  border-radius: 9px;
+}
+
+.logistics-delivery-details small {
+  display: block;
+  color: #78909c;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  margin-bottom: 5px;
+}
+
+.logistics-delivery-details strong {
+  font-size: 13px;
+}
+
+/* ACTION */
+
+.logistics-delivery-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 17px;
+}
+
+.logistics-delivery-action button {
+  border: none;
+  background: #2e7d32;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.logistics-delivery-action button:hover {
+  background: #256628;
+}
+
+.logistics-delivery-action .material-symbols-outlined {
+  font-size: 18px;
+}
+
+/* COMPLETED */
+
+.logistics-delivery-complete {
+  margin-top: 17px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.logistics-delivery-complete .material-symbols-outlined {
+  font-size: 19px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .logistics-deliveries-page {
+    padding: 25px 18px;
+  }
+
+  .logistics-deliveries-header-content {
+    display: block;
+  }
+
+  .logistics-deliveries-brand {
+    margin-bottom: 25px;
+    min-width: 0;
+  }
+
+  .logistics-deliveries-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .logistics-deliveries-brand h2 {
+    font-size: 17px;
+  }
+
+  .logistics-delivery-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .logistics-delivery-details {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .logistics-delivery-action {
+    justify-content: flex-start;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .logistics-deliveries-brand {
+    gap: 9px;
+  }
+
+  .logistics-deliveries-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logistics-deliveries-header h1 {
+    font-size: 28px;
+  }
+
+  .logistics-deliveries-card-header {
+    padding: 18px;
+  }
+
+  .logistics-delivery-item {
+    padding: 20px 18px;
+  }
+
+}

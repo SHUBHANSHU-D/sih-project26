@@ -25,9 +25,6 @@
     "opsz" 24;
 }
 
-/* =========================================================
-   SIDEBAR
-   ========================================================= */
 
 .logistics-sidebar {
   width: 245px;
@@ -40,7 +37,6 @@
   box-sizing: border-box;
 }
 
-/* BRAND */
 
 .logistics-brand {
   display: flex;
@@ -73,9 +69,6 @@
   margin-top: 4px;
 }
 
-/* =========================================================
-   MENU
-   ========================================================= */
 
 .logistics-menu {
   display: flex;
@@ -115,18 +108,11 @@
   gap: 5px;
 }
 
-/* =========================================================
-   MAIN
-   ========================================================= */
-
 .logistics-main {
   flex: 1;
   min-width: 0;
 }
 
-/* =========================================================
-   TOP BAR
-   ========================================================= */
 
 .logistics-top-bar {
   min-height: 72px;
@@ -139,7 +125,6 @@
   box-sizing: border-box;
 }
 
-/* MOBILE BRAND */
 
 .logistics-mobile-brand {
   display: none;
@@ -157,7 +142,6 @@
   display: block;
 }
 
-/* SEARCH */
 
 .logistics-search {
   max-width: 420px;
@@ -191,7 +175,6 @@
   color: #90a4ae;
 }
 
-/* TOP ACTIONS */
 
 .logistics-top-actions {
   margin-left: auto;
@@ -200,7 +183,6 @@
   gap: 20px;
 }
 
-/* NOTIFICATION */
 
 .logistics-notification {
   position: relative;
@@ -234,7 +216,6 @@
   right: 7px;
 }
 
-/* USER */
 
 .logistics-user {
   display: flex;
@@ -269,18 +250,10 @@
   margin-top: 2px;
 }
 
-/* =========================================================
-   CONTENT
-   ========================================================= */
-
 .logistics-content {
   padding: 32px;
   box-sizing: border-box;
 }
-
-/* =========================================================
-   WELCOME
-   ========================================================= */
 
 .logistics-welcome {
   background: linear-gradient(
@@ -335,7 +308,6 @@
   font-size: 18px;
 }
 
-/* WELCOME ILLUSTRATION */
 
 .logistics-illustration {
   position: relative;
@@ -389,10 +361,6 @@
   left: 5px;
 }
 
-/* =========================================================
-   SECTION
-   ========================================================= */
-
 .logistics-section {
   margin-top: 30px;
 }
@@ -412,9 +380,6 @@
   font-weight: 700;
 }
 
-/* =========================================================
-   STATS
-   ========================================================= */
 
 .logistics-stats {
   margin-top: 17px;
@@ -479,9 +444,6 @@
   font-size: 11px;
 }
 
-/* =========================================================
-   QUICK ACTION
-   ========================================================= */
 
 .logistics-action-card {
   margin-top: 17px;
@@ -541,9 +503,6 @@
   font-size: 22px;
 }
 
-/* =========================================================
-   RESPONSIVE - TABLET
-   ========================================================= */
 
 @media (max-width: 1050px) {
   .logistics-stats {
@@ -559,9 +518,6 @@
   }
 }
 
-/* =========================================================
-   RESPONSIVE - MOBILE
-   ========================================================= */
 
 @media (max-width: 800px) {
   .logistics-sidebar {
@@ -595,10 +551,6 @@
   }
 }
 
-/* =========================================================
-   RESPONSIVE - SMALL MOBILE
-   ========================================================= */
-
 @media (max-width: 550px) {
   .logistics-stats {
     grid-template-columns: 1fr;
@@ -628,10 +580,6 @@
     padding: 17px;
   }
 }
-
-/* =========================================================
-   RESPONSIVE - VERY SMALL MOBILE
-   ========================================================= */
 
 @media (max-width: 400px) {
   .logistics-top-bar {

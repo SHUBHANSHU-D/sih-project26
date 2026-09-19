@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0");
 
 
-/* =========================
-   GLOBAL
-   ========================= */
 
 * {
   box-sizing: border-box;
@@ -18,9 +15,6 @@
 }
 
 
-/* =========================
-   SIDEBAR
-   ========================= */
 
 .buyer-sidebar {
   width: 245px;
@@ -34,9 +28,6 @@
 }
 
 
-/* =========================
-   BRAND
-   ========================= */
 
 .brand {
   display: flex;
@@ -46,7 +37,6 @@
 }
 
 
-/* REAL SIDEBAR LOGO */
 
 .buyer-sidebar-logo {
   width: 52px;
@@ -57,7 +47,6 @@
 }
 
 
-/* Old F logo - kept for compatibility */
 
 .brand-mark {
   width: 42px;
@@ -73,7 +62,6 @@
 }
 
 
-/* BRAND TEXT */
 
 .brand h2 {
   margin: 0;
@@ -91,9 +79,6 @@
 }
 
 
-/* =========================
-   SIDEBAR MENU
-   ========================= */
 
 .sidebar-menu {
   display: flex;
@@ -131,9 +116,6 @@
 }
 
 
-/* =========================
-   SIDEBAR BOTTOM
-   ========================= */
 
 .sidebar-bottom {
   margin-top: auto;
@@ -142,7 +124,7 @@
 }
 
 
-/* Logout */
+
 
 .sidebar-bottom .menu-item:last-child {
   color: #6b706b;
@@ -154,9 +136,7 @@
 }
 
 
-/* =========================
-   MAIN
-   ========================= */
+
 
 .buyer-main {
   flex: 1;
@@ -164,9 +144,6 @@
 }
 
 
-/* =========================
-   TOP BAR
-   ========================= */
 
 .top-bar {
   height: 75px;
@@ -183,9 +160,7 @@
 }
 
 
-/* =========================
-   SEARCH
-   ========================= */
+
 
 .top-search {
   width: 430px;
@@ -214,9 +189,7 @@
 }
 
 
-/* =========================
-   TOP ACTIONS
-   ========================= */
+
 
 .top-actions {
   display: flex;
@@ -225,7 +198,7 @@
 }
 
 
-/* Notification */
+
 
 .notification-icon {
   position: relative;
@@ -262,7 +235,7 @@
 }
 
 
-/* Notification dot */
+
 
 .notification-dot {
   position: absolute;
@@ -275,9 +248,6 @@
 }
 
 
-/* =========================
-   USER PROFILE
-   ========================= */
 
 .user-profile {
   display: flex;
@@ -312,20 +282,12 @@
 }
 
 
-/* =========================
-   CONTENT
-   ========================= */
-
 .page-content {
   max-width: 1250px;
   margin: auto;
   padding: 35px;
 }
 
-
-/* =========================
-   WELCOME
-   ========================= */
 
 .welcome-section {
   background: #e9f0e4;
@@ -363,9 +325,6 @@
 }
 
 
-/* =========================
-   WELCOME BUTTONS
-   ========================= */
 
 .welcome-buttons {
   display: flex;
@@ -401,10 +360,6 @@
 }
 
 
-/* =========================
-   WELCOME LOGO AREA
-   ========================= */
-
 .welcome-illustration {
   width: 220px;
   min-width: 220px;
@@ -415,7 +370,6 @@
 }
 
 
-/* REAL LARGE LOGO */
 
 .buyer-hero-logo {
   width: 175px;
@@ -425,8 +379,6 @@
 }
 
 
-/* Old illustration classes
-   kept only for compatibility */
 
 .farm-circle {
   width: 175px;
@@ -454,10 +406,6 @@
   left: 15px;
 }
 
-
-/* =========================
-   SECTIONS
-   ========================= */
 
 .section {
   margin-top: 38px;
@@ -488,10 +436,6 @@
   text-decoration: underline;
 }
 
-
-/* =========================
-   CATEGORIES
-   ========================= */
 
 .category-list {
   display: grid;
@@ -557,9 +501,6 @@
 }
 
 
-/* =========================
-   PRODUCTS
-   ========================= */
 
 .product-list {
   display: grid;
@@ -649,9 +590,7 @@
 }
 
 
-/* =========================
-   INFO BLOCKS
-   ========================= */
+
 
 .dashboard-info {
   margin-top: 38px;
@@ -720,9 +659,6 @@
 }
 
 
-/* =========================
-   QUICK OVERVIEW
-   ========================= */
 
 .dashboard-overview {
   display: grid;
@@ -820,9 +756,6 @@
 }
 
 
-/* =========================
-   MOBILE BRAND
-   ========================= */
 
 .buyer-mobile-logo {
   width: 38px;
@@ -832,9 +765,7 @@
 }
 
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+
 
 @media (max-width: 1000px) {
 
@@ -860,9 +791,7 @@
 }
 
 
-/* =========================
-   TABLET / MOBILE
-   ========================= */
+
 
 @media (max-width: 700px) {
 
@@ -934,9 +863,6 @@
 }
 
 
-/* =========================
-   VERY SMALL SCREENS
-   ========================= */
 
 @media (max-width: 450px) {
 

@@ -52,13 +52,11 @@ function LogisticsDeliveries() {
   return (
     <div className="logistics-deliveries-page">
 
-      {/* HEADER */}
 
       <header className="logistics-deliveries-header">
 
         <div className="logistics-deliveries-header-content">
 
-          {/* BRAND */}
 
           <div className="logistics-deliveries-brand">
 
@@ -75,7 +73,6 @@ function LogisticsDeliveries() {
 
           </div>
 
-          {/* PAGE TITLE */}
 
           <div className="logistics-deliveries-title">
 
@@ -102,7 +99,6 @@ function LogisticsDeliveries() {
 
       </header>
 
-      {/* SUMMARY */}
 
       <section className="logistics-delivery-summary">
 
@@ -153,7 +149,6 @@ function LogisticsDeliveries() {
 
       </section>
 
-      {/* DELIVERY LIST */}
 
       <section className="logistics-deliveries-card">
 
@@ -184,7 +179,6 @@ function LogisticsDeliveries() {
                 key={delivery.id}
               >
 
-                {/* MAIN */}
 
                 <div className="logistics-delivery-main">
 
@@ -223,7 +217,6 @@ function LogisticsDeliveries() {
 
                 </div>
 
-                {/* DETAILS */}
 
                 <div className="logistics-delivery-details">
 
@@ -245,7 +238,6 @@ function LogisticsDeliveries() {
 
                 </div>
 
-                {/* ACTION */}
 
                 {nextStatus && (
                   <div className="logistics-delivery-action">
@@ -276,7 +268,6 @@ function LogisticsDeliveries() {
                   </div>
                 )}
 
-                {/* COMPLETED */}
 
                 {delivery.status === "Delivered" && (
                   <div className="logistics-delivery-complete">
